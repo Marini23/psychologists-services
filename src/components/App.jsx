@@ -1,15 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div>
+      <Routes>
+        <Route path="/" element={<div>Loaout</div>}>
+          <Route index element={<div>Homepage</div>} />
+          <Route path="psychologists" element={<div>psychologists</div>} />
+          <Route path="*" element={<div>Homepage</div>} />
+        </Route>
+      </Routes>
       Psychologists-services
     </div>
   );
