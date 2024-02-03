@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Header, NavLinkStyled } from './Navigation.styled';
-import { Modal } from 'components/Modal';
+import { ModalWindow } from 'components/Modal';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 export const Navigation = () => {
@@ -28,11 +28,9 @@ export const Navigation = () => {
         <button type="submit" onClick={openModal}>
           Register
         </button>
-        {modalIsOpen && (
-          <Modal isClose={closeModal} isOpen={modalIsOpen}>
-            <div>Register</div>
-          </Modal>
-        )}
+        <ModalWindow isClose={closeModal} isOpen={modalIsOpen}>
+          <RegisterForm isClose={closeModal} />
+        </ModalWindow>
       </div>
     </Header>
   );
