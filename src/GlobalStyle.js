@@ -51,6 +51,7 @@ width: 100%;
 height: '100vh';
 margin: 0 auto;
 color: #191A15;
+font-size: 100%;
 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 
     sans-serif;
 -webkit-font-smoothing: antialiased;
