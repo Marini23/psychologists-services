@@ -12,6 +12,8 @@ import {
 import { FiEyeOff } from 'react-icons/fi';
 import { FiEye } from 'react-icons/fi';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/authOperations';
 
 const formSchema = Yup.object().shape({
   email: Yup.string().email().required('Email is required'),
@@ -21,6 +23,7 @@ const formSchema = Yup.object().shape({
 });
 
 export const LogInForm = ({ isClose }) => {
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -29,8 +32,7 @@ export const LogInForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: values => {
-      console.log('login');
-      alert(JSON.stringify(values, null, 2));
+      dispatch(logIn(values));
       isClose();
     },
   });

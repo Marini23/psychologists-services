@@ -12,6 +12,8 @@ import {
 import { FiEyeOff } from 'react-icons/fi';
 import { FiEye } from 'react-icons/fi';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/authOperations';
 
 const nameRegex = /[a-zA-Zа-яА-Я]+(([' ][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 
@@ -29,6 +31,7 @@ const formSchema = Yup.object().shape({
 
 export const RegisterForm = ({ isClose }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -36,9 +39,8 @@ export const RegisterForm = ({ isClose }) => {
       password: '',
     },
     validationSchema: formSchema,
-    onSubmit: values => {
-      console.log('submit');
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async values => {
+      dispatch(register(values));
       isClose();
     },
   });

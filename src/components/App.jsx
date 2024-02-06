@@ -1,8 +1,22 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layuot } from './Layout';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchCurrentUser } from '../redux/authOperations';
+import { selectIsRefreshing } from '../redux/selectors';
+import { Loader } from './Loader';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <div>
       <Routes>
         <Route path="/" element={<Layuot />}>
