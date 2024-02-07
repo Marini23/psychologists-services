@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ModalWindow } from 'components/Modal/Modal';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { LogInForm } from 'components/LogInForm/LogInForm';
+import { AuthContainer, BtnLogIn, BtnRegistration } from './AuthMenu.styled';
 
 export const AuthMenu = () => {
   const [modalIsOpenRegister, setModalIsOpenRegister] = useState(false);
@@ -23,19 +24,19 @@ export const AuthMenu = () => {
     setModalIsOpenLogIn(false);
   };
   return (
-    <div>
-      <button type="submit" onClick={openModalLogIn}>
+    <AuthContainer>
+      <BtnLogIn type="submit" onClick={openModalLogIn}>
         Log In
-      </button>
-      <button type="submit" onClick={openModalRegister}>
-        Register
-      </button>
+      </BtnLogIn>
+      <BtnRegistration type="submit" onClick={openModalRegister}>
+        Registration
+      </BtnRegistration>
       <ModalWindow isClose={closeModalRegister} isOpen={modalIsOpenRegister}>
         <RegisterForm isClose={closeModalRegister} />
       </ModalWindow>
       <ModalWindow isClose={closeModalLogIn} isOpen={modalIsOpenLogIn}>
         <LogInForm isClose={closeModalLogIn} />
       </ModalWindow>
-    </div>
+    </AuthContainer>
   );
 };

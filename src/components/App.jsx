@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layuot } from './Layout';
+import { Layuot } from './Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from '../redux/authOperations';
@@ -20,9 +20,9 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Layuot />}>
-          <Route index element={<div>Homepage</div>} />
-          <Route path="psychologists" element={<div>psychologists</div>} />
-          <Route path="*" element={<div>Homepage</div>} />
+          <Route index element={<div></div>} />
+          <Route path="/psychologists" element={<div></div>} />
+          <Route path="*" element={<div></div>} />
         </Route>
       </Routes>
       Psychologists-services

@@ -1,14 +1,15 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navigation } from './Navigation/Navigation';
+import { Navigation } from '../Navigation/Navigation';
+import { Header } from './Layout.styled';
 
 export const Layuot = () => {
   return (
-    <div>
+    <Header>
       <Navigation />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </div>
+    </Header>
   );
 };

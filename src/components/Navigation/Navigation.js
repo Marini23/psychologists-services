@@ -1,4 +1,9 @@
-import { Header, NavLinkStyled } from './Navigation.styled';
+import {
+  NavLinkStyled,
+  NavLinkStyledLogo,
+  NavStyled,
+  SpanLogo,
+} from './Navigation.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/selectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
@@ -8,15 +13,15 @@ export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <Header>
-      <div>
-        <NavLinkStyled to="/">
-          <span>psychologists.</span>services
-        </NavLinkStyled>
-        <NavLinkStyled to="/">Home</NavLinkStyled>
-        <NavLinkStyled to="/psychologists">psychologists</NavLinkStyled>
-      </div>
+    <NavStyled>
+      <NavLinkStyledLogo to="/">
+        <SpanLogo>psychologists.</SpanLogo>services
+      </NavLinkStyledLogo>
+
+      <NavLinkStyled to="/">Home</NavLinkStyled>
+      <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
+
       {isLoggedIn ? <UserMenu /> : <AuthMenu />}
-    </Header>
+    </NavStyled>
   );
 };
