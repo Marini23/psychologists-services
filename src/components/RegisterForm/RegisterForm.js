@@ -13,7 +13,7 @@ import { FiEyeOff } from 'react-icons/fi';
 import { FiEye } from 'react-icons/fi';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from '../../redux/authOperations';
+import { register } from '../../redux/authSlice/authOperations';
 
 const nameRegex = /[a-zA-Zа-яА-Я]+(([' ][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 

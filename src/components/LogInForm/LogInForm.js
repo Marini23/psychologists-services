@@ -13,7 +13,7 @@ import { FiEyeOff } from 'react-icons/fi';
 import { FiEye } from 'react-icons/fi';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logIn } from '../../redux/authOperations';
+import { logIn } from '../../redux/authSlice/authOperations';
 
 const formSchema = Yup.object().shape({
   email: Yup.string().email().required('Email is required'),

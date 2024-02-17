@@ -9,6 +9,7 @@ export const green = {
     background: `#F3F3F3`,
     backgroundMain: `#FBFBFB`,
     grey: `#8A8A89`,
+    black: '#191A15',
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
   },

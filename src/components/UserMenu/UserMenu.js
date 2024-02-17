@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectName } from '../../redux/selectors';
-import { logOut } from '../../redux/authOperations';
+import { logOut } from '../../redux/authSlice/authOperations';
 
 import avatar from './avatar.svg';
 import {

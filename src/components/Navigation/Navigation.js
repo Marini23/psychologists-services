@@ -1,4 +1,5 @@
 import {
+  Header,
   NavLinkStyled,
   NavLinkStyledLogo,
   NavStyled,
@@ -13,15 +14,17 @@ export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <NavStyled>
-      <NavLinkStyledLogo to="/">
-        <SpanLogo>psychologists.</SpanLogo>services
-      </NavLinkStyledLogo>
+    <Header>
+      <NavStyled>
+        <NavLinkStyledLogo to="/">
+          <SpanLogo>psychologists.</SpanLogo>services
+        </NavLinkStyledLogo>
 
-      <NavLinkStyled to="/">Home</NavLinkStyled>
-      <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
+        <NavLinkStyled to="/">Home</NavLinkStyled>
+        <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
 
-      {isLoggedIn ? <UserMenu /> : <AuthMenu />}
-    </NavStyled>
+        {isLoggedIn ? <UserMenu /> : <AuthMenu />}
+      </NavStyled>
+    </Header>
   );
 };
