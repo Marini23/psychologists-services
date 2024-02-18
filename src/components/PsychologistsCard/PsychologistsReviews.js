@@ -1,14 +1,33 @@
+import {
+  Avatar,
+  Container,
+  Img,
+  Name,
+  NameRatingContainer,
+  Rating,
+  ReviewItem,
+  ReviewsList,
+} from './PsychologistsReviews.styled';
+import StarIcon from './star.svg';
+
 export const PsychologistsReviews = ({ reviews }) => {
   return (
-    <ul>
+    <ReviewsList>
       {reviews.map(review => (
-        <li key={review.reviewer}>
-          <div>{review.reviewer[0]}</div>
-          <h4>{review.reviewer}</h4>
-          <p>{review.rating}</p>
+        <ReviewItem key={review.reviewer}>
+          <Container>
+            <Avatar>{review.reviewer[0]}</Avatar>
+            <NameRatingContainer>
+              <Name>{review.reviewer}</Name>
+              <Rating>
+                <Img src={StarIcon} alt="Star Icon" />
+                {review.rating}
+              </Rating>
+            </NameRatingContainer>
+          </Container>
           <p>{review.comment}</p>
-        </li>
+        </ReviewItem>
       ))}
-    </ul>
+    </ReviewsList>
   );
 };

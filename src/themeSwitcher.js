@@ -2,7 +2,7 @@ export const green = {
   name: 'green-theme',
   colors: {
     primary: `#54BE96`,
-    secondary: `rgba(84, 190, 150, 0.)`,
+    secondary: `rgba(84, 190, 150, 0.2)`,
     active: `#36A379`,
     price: `#38CD3E`,
     secondaryText: `rgba(25, 26, 21, 0.5)`,

@@ -1,18 +1,27 @@
 import StarIcon from './star.svg';
 import HeartIcon from './heart_normal.svg';
-import { PsychologistsReviews } from './PsychologistsReviews';
 import {
+  AboutText,
+  BtnReadMore,
+  Container,
   ContainerImg,
   ContainerInfo,
   ContainerTitle,
+  FeaturesSpan,
+  FeaturesText,
+  Heart,
   Img,
   Item,
   Name,
+  NameText,
   PriceRating,
+  PriceSpan,
+  PriceText,
   Rating,
   RatingText,
   Star,
 } from './PsychologistsCard.styled';
+import { ReadMoreInfo } from './ReadMoreInfo';
 
 export const PsychologistsCard = ({ psychologist }) => {
   const {
@@ -21,9 +30,11 @@ export const PsychologistsCard = ({ psychologist }) => {
     price_per_hour,
     rating,
     experience,
-    licence,
+    license,
     about,
     reviews,
+    specialization,
+    initial_consultation,
   } = psychologist;
 
   return (
@@ -35,7 +46,7 @@ export const PsychologistsCard = ({ psychologist }) => {
         <ContainerTitle>
           <Name>
             <p>Psychologist</p>
-            <h3>{name}</h3>
+            <NameText>{name}</NameText>
           </Name>
           <PriceRating>
             <Rating>
@@ -43,25 +54,32 @@ export const PsychologistsCard = ({ psychologist }) => {
               <RatingText>Rating: {rating}</RatingText>
             </Rating>
             <p>|</p>
-            <p>
-              Price / 1 hour: <span>{price_per_hour}$</span>
-            </p>
-            <img src={HeartIcon} alt="Heart Icon" />
+            <PriceText>
+              Price / 1 hour: <PriceSpan>{price_per_hour}$</PriceSpan>
+            </PriceText>
+            <Heart src={HeartIcon} alt="Heart Icon" />
           </PriceRating>
         </ContainerTitle>
-        <div>
-          <p>
-            <span>Experience:</span>
-            {experience}
-          </p>
-          <p>
-            <span>Lisence:</span>
-            {licence}
-          </p>
-        </div>
-        <p>{about}</p>
-        <PsychologistsReviews reviews={reviews} />
-        <button type="button">Make an appointment</button>
+        <Container>
+          <FeaturesText>
+            Experience: <FeaturesSpan>{experience}</FeaturesSpan>
+          </FeaturesText>
+          <FeaturesText>
+            Lisence: <FeaturesSpan>{license}</FeaturesSpan>
+          </FeaturesText>
+        </Container>
+        <Container>
+          <FeaturesText>
+            Specialization: <FeaturesSpan>{specialization}</FeaturesSpan>
+          </FeaturesText>
+          <FeaturesText>
+            Initial_consultation:{' '}
+            <FeaturesSpan>{initial_consultation}</FeaturesSpan>
+          </FeaturesText>
+        </Container>
+        <AboutText>{about}</AboutText>
+        <BtnReadMore type="button"> Read more</BtnReadMore>
+        <ReadMoreInfo reviews={reviews} />
       </ContainerInfo>
     </Item>
   );
