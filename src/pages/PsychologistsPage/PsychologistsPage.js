@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { fetchAll } from '../../redux/psychologistsOperations';
 // import { Loader } from 'components/Loader';
 import { PsychologistsList } from 'components/PsychologistsList/PsychologistsList';
+import { Container } from './PsychologistsPage.styled';
+import { LoadMoreButton } from 'components/LoadMoreButton/LoadMoreButton';
 
 export const PsychologistsPage = () => {
   const dispatch = useDispatch();
@@ -17,10 +19,11 @@ export const PsychologistsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <Container>
       <PsychologistsList />
       {/* {isLoading && !error && <Loader />}
       {error && <p>Something went wrong!</p>} */}
-    </div>
+      <LoadMoreButton />
+    </Container>
   );
 };

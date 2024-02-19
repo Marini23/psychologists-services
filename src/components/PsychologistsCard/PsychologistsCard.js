@@ -22,7 +22,10 @@ import {
   Star,
 } from './PsychologistsCard.styled';
 import { ReadMoreInfo } from './ReadMoreInfo';
-
+import { useState } from 'react';
+import { ModalWindow } from 'components/Modal/Modal';
+import psychologists from '../../psychologists.json';
+import { FormMakeAppointment } from 'components/FormMakeAppointment/FormMakeAppointment';
 export const PsychologistsCard = ({ psychologist }) => {
   const {
     name,
@@ -36,6 +39,26 @@ export const PsychologistsCard = ({ psychologist }) => {
     specialization,
     initial_consultation,
   } = psychologist;
+
+  const [isReadMore, setIsReadMore] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedPsychologist, setSelectedPsychologist] = useState(null);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+    const selectPsychologist = psychologists.find(
+      psychologist => psychologist.name === name
+    );
+    setSelectedPsychologist(selectPsychologist);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const isOpenReadMore = () => {
+    setIsReadMore(true);
+  };
 
   return (
     <Item>
@@ -78,9 +101,22 @@ export const PsychologistsCard = ({ psychologist }) => {
           </FeaturesText>
         </Container>
         <AboutText>{about}</AboutText>
-        <BtnReadMore type="button"> Read more</BtnReadMore>
-        <ReadMoreInfo reviews={reviews} />
+        {!isReadMore ? (
+          <BtnReadMore type="button" onClick={isOpenReadMore}>
+            Read more
+          </BtnReadMore>
+        ) : null}
+        {isReadMore ? (
+          <ReadMoreInfo reviews={reviews} isOpen={openModal} />
+        ) : null}
       </ContainerInfo>
+
+      <ModalWindow isClose={closeModal} isOpen={modalIsOpen}>
+        <FormMakeAppointment
+          isClose={closeModal}
+          selectedPsychologist={selectedPsychologist}
+        />
+      </ModalWindow>
     </Item>
   );
 };

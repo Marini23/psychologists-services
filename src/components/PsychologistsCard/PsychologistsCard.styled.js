@@ -6,7 +6,7 @@ export const Item = styled.li`
   gap: 24px;
   width: 100%;
   max-width: 1184px;
-  height: 358px;
+  border-radius: 24px;
   padding: 24px;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
   color: ${({ theme }) => theme.colors.grey};
@@ -138,4 +138,20 @@ export const BtnReadMore = styled.button`
   width: 82px;
   font-weight: 500;
   line-height: 1.5;
+`;
+
+export const BtnMakeAppointment = styled.button`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 227px;
+  height: 48px;
+  border-radius: 30px;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.backgroundMain};
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 24px;
 `;
