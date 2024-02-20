@@ -7,3 +7,6 @@ export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectIsLoading = state => state.psychologists.isLoading;
 
 export const selectError = state => state.psychologists.error;
+
+export const selectpsychologistsItems = state =>
+  state.psychologists.psychologistsItems;

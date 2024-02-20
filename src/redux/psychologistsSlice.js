@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAll } from './psychologistsOperations';
+import { createAll, fetchAll } from './psychologistsOperations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -20,12 +20,18 @@ const psychologistsSlice = createSlice({
 
   extraReducers: builder =>
     builder
+      .addCase(createAll.pending, handlePending)
+      .addCase(createAll.rejected, handleRejected)
+      .addCase(createAll.fulfilled, (state, action) => {
+        console.log('reducer');
+      })
       .addCase(fetchAll.pending, handlePending)
       .addCase(fetchAll.rejected, handleRejected)
       .addCase(fetchAll.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.isLoading = false;
         state.error = null;
-        state.advertsItems = action.payload;
+        state.psychologistsItems = action.payload;
       }),
 });
 
