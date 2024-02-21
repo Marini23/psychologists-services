@@ -24,8 +24,9 @@ import {
 import { ReadMoreInfo } from './ReadMoreInfo';
 import { useState } from 'react';
 import { ModalWindow } from 'components/Modal/Modal';
-import psychologists from '../../psychologists.json';
 import { FormMakeAppointment } from 'components/FormMakeAppointment/FormMakeAppointment';
+import { useSelector } from 'react-redux';
+import { selectpsychologistsItems } from '../../redux/selectors';
 export const PsychologistsCard = ({ psychologist }) => {
   const {
     name,
@@ -39,6 +40,8 @@ export const PsychologistsCard = ({ psychologist }) => {
     specialization,
     initial_consultation,
   } = psychologist;
+
+  const psychologists = useSelector(selectpsychologistsItems);
 
   const [isReadMore, setIsReadMore] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);

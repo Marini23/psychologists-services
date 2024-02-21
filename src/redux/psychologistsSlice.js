@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createAll, fetchAll } from './psychologistsOperations';
+import {
+  fetchAll,
+  fetchFirstPage,
+  loadMorePages,
+} from './psychologistsOperations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -20,11 +24,11 @@ const psychologistsSlice = createSlice({
 
   extraReducers: builder =>
     builder
-      .addCase(createAll.pending, handlePending)
-      .addCase(createAll.rejected, handleRejected)
-      .addCase(createAll.fulfilled, (state, action) => {
-        console.log('reducer');
-      })
+      // .addCase(createAll.pending, handlePending)
+      // .addCase(createAll.rejected, handleRejected)
+      // .addCase(createAll.fulfilled, (state, action) => {
+      //   console.log('reducer');
+      // })
       .addCase(fetchAll.pending, handlePending)
       .addCase(fetchAll.rejected, handleRejected)
       .addCase(fetchAll.fulfilled, (state, action) => {
@@ -32,6 +36,24 @@ const psychologistsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.psychologistsItems = action.payload;
+      })
+      .addCase(fetchFirstPage.pending, handlePending)
+      .addCase(fetchFirstPage.rejected, handleRejected)
+      .addCase(fetchFirstPage.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.psychologistsItems = action.payload;
+      })
+      .addCase(loadMorePages.pending, handlePending)
+      .addCase(loadMorePages.rejected, handleRejected)
+      .addCase(loadMorePages.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.isLoading = false;
+        state.error = null;
+        state.psychologistsItems = [
+          ...state.psychologistsItems,
+          ...action.payload,
+        ];
       }),
 });
 

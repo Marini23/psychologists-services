@@ -5,9 +5,10 @@ import { selectpsychologistsItems } from '../../redux/selectors';
 
 export const PsychologistsList = () => {
   const psychologists = useSelector(selectpsychologistsItems);
+  //   console.log(psychologists);
   return (
     <List>
-      {psychologists.slice(0, 3).map(psychologist => (
+      {psychologists.map(psychologist => (
         <PsychologistsCard
           psychologist={psychologist}
           key={psychologist.name}
