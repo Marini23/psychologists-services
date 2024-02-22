@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  fetchAll,
   fetchFirstPage,
+  fetchTotalHits,
   loadMorePages,
 } from './psychologistsOperations';
 
@@ -18,24 +18,25 @@ const psychologistsSlice = createSlice({
   name: 'psychologists',
   initialState: {
     psychologistsItems: [],
+    currentPage: 1,
+    totalPages: null,
     isLoading: false,
     error: null,
+  },
+  reducers: {
+    changePage(state) {
+      state.currentPage += 1;
+    },
   },
 
   extraReducers: builder =>
     builder
-      // .addCase(createAll.pending, handlePending)
-      // .addCase(createAll.rejected, handleRejected)
-      // .addCase(createAll.fulfilled, (state, action) => {
-      //   console.log('reducer');
-      // })
-      .addCase(fetchAll.pending, handlePending)
-      .addCase(fetchAll.rejected, handleRejected)
-      .addCase(fetchAll.fulfilled, (state, action) => {
-        console.log(action.payload);
+      .addCase(fetchTotalHits.pending, handlePending)
+      .addCase(fetchTotalHits.rejected, handleRejected)
+      .addCase(fetchTotalHits.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.psychologistsItems = action.payload;
+        state.totalPages = Math.ceil(action.payload / 3);
       })
       .addCase(fetchFirstPage.pending, handlePending)
       .addCase(fetchFirstPage.rejected, handleRejected)
@@ -56,5 +57,7 @@ const psychologistsSlice = createSlice({
         ];
       }),
 });
+
+export const { changePage } = psychologistsSlice.actions;
 
 export const psychologistsReducer = psychologistsSlice.reducer;

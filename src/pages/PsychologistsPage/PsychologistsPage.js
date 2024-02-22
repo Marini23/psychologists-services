@@ -1,20 +1,35 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFirstPage } from '../../redux/psychologistsOperations';
+import {
+  fetchFirstPage,
+  fetchTotalHits,
+} from '../../redux/psychologistsOperations';
 import { PsychologistsList } from 'components/PsychologistsList/PsychologistsList';
 import { Container } from './PsychologistsPage.styled';
 import { LoadMoreButton } from 'components/LoadMoreButton/LoadMoreButton';
-import { selectError, selectIsLoading } from '../../redux/selectors';
+import {
+  selectCurrentPage,
+  selectError,
+  selectIsLoading,
+  selectTotalPages,
+} from '../../redux/selectors';
 import { Loader } from 'components/Loader';
 
 export const PsychologistsPage = () => {
   const dispatch = useDispatch();
+  const totalPages = useSelector(selectTotalPages);
+  const currentPage = useSelector(selectCurrentPage);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
+  const isLoadMore = currentPage < totalPages;
+
   useEffect(() => {
-    // dispatch(fetchAll());
     dispatch(fetchFirstPage());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchTotalHits());
   }, [dispatch]);
 
   return (
@@ -22,7 +37,7 @@ export const PsychologistsPage = () => {
       {isLoading && !error && <Loader />}
       {error && <p>Something went wrong!</p>}
       <PsychologistsList />
-      <LoadMoreButton />
+      {isLoadMore ? <LoadMoreButton /> : null}
     </Container>
   );
 };

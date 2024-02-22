@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BtnLoadMore } from './LoadMoreButton.styled';
 import { loadMorePages } from '../../redux/psychologistsOperations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changePage } from '../../redux/psychologistsSlice';
+import { selectCurrentPage, selectTotalPages } from '../../redux/selectors';
 
-export const LoadMoreButton = () => {
+export const LoadMoreButton = ({ onClick }) => {
   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
+  const currentPage = useSelector(selectCurrentPage);
 
   const handleLoadMore = () => {
-    setCurrentPage(currentPage + 1);
+    dispatch(changePage());
   };
 
   useEffect(() => {
-    console.log(currentPage);
     if (currentPage > 1) {
       dispatch(loadMorePages(currentPage));
     }

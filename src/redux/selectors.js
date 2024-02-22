@@ -10,3 +10,7 @@ export const selectError = state => state.psychologists.error;
 
 export const selectpsychologistsItems = state =>
   state.psychologists.psychologistsItems;
+
+export const selectTotalPages = state => state.psychologists.totalPages;
+
+export const selectCurrentPage = state => state.psychologists.currentPage;

@@ -5,7 +5,6 @@ import { selectpsychologistsItems } from '../../redux/selectors';
 
 export const PsychologistsList = () => {
   const psychologists = useSelector(selectpsychologistsItems);
-  //   console.log(psychologists);
   return (
     <List>
       {psychologists.map(psychologist => (
