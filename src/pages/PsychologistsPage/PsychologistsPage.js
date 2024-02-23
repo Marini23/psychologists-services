@@ -15,7 +15,6 @@ import {
 } from '../../redux/selectors';
 import { Loader } from 'components/Loader';
 import { FilterPsychologists } from 'components/FilterPsychologists/FilterPsychologists';
-import { FilterPsychologistsNative } from 'components/FilterPsychologists/FilterPsychologists copy';
 
 export const PsychologistsPage = () => {
   const dispatch = useDispatch();
@@ -37,7 +36,6 @@ export const PsychologistsPage = () => {
   return (
     <Container>
       <FilterPsychologists />
-      <FilterPsychologistsNative />
       {isLoading && !error && <Loader />}
       {error && <p>Something went wrong!</p>}
       <PsychologistsList />

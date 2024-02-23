@@ -41,8 +41,8 @@ export const FilterPsychologists = () => {
             ...baseStyles,
             height: 48,
             borderRadius: 14,
+
             backgroundColor: theme.colors.primary,
-            color: '#121417',
             border: state.isSelected ? 'none' : 'none',
             borderColor: state.isFocused
               ? 'transparent'
@@ -58,27 +58,34 @@ export const FilterPsychologists = () => {
           }),
           menu: baseStyles => ({
             ...baseStyles,
-            width: 224,
-            height: 272,
+            display: 'flex',
+            alignItems: 'center',
+            height: 226,
             borderRadius: 14,
-            color: 'rgba(18, 20, 23, 0.2)',
-            fontSize: 16,
-            fontWeight: 500,
-            lineHeight: 1.25,
-            backgroundColor: '#FFFFFF',
+            paddingLeft: 16,
+            color: theme.colors.dropdownText,
+            fontSize: '1rem',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            backgroundColor: theme.colors.dropdownBg,
+            boxShadow: '0px 20px 69px 0px rgba(0, 0, 0, 0.07)',
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,
             fontWeight: 500,
+            padding: 0,
+            //   margin: ' 10px 0',
+            marginBottom: 10,
             color: state.isSelected
-              ? 'rgba(18, 20, 23, 0.2)'
-              : 'rgba(18, 20, 23, 0.2)',
-            backgroundColor: state.isFocused ? '#FFFFFF' : '#FFFFFF',
+              ? theme.colors.dropdownText
+              : theme.colors.dropdownText,
+            backgroundColor: state.isFocused ? 'transparent' : 'transparent',
             ':hover': {
-              backgroundColor: '#FFFFFF',
-              color: '#121417',
+              backgroundColor: 'transparent',
+              color: theme.colors.black,
             },
           }),
+          indicatorSeparator: () => null,
         }}
       />
     </FiltersContainer>
