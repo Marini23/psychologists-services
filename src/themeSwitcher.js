@@ -12,6 +12,8 @@ export const green = {
     black: '#191A15',
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
+    dropdownText: `rgba(25, 26, 21, 0.3)`,
+    dropdownBg: `#FFFFFF`,
   },
 };
 
@@ -29,6 +31,7 @@ export const blue = {
     black: '#191A15',
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
+    dropdownText: `rgba(25, 26, 21, 0.3)`,
   },
 };
 
@@ -45,5 +48,6 @@ export const orange = {
     grey: `#8A8A89`,
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
+    dropdownText: `rgba(25, 26, 21, 0.3)`,
   },
 };

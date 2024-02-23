@@ -10,7 +10,6 @@ export const Item = styled.li`
   padding: 24px;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
   color: ${({ theme }) => theme.colors.grey};
-  margin: 0 auto;
 `;
 
 export const ContainerImg = styled.div`

@@ -3,7 +3,7 @@ import { BtnLoadMore } from './LoadMoreButton.styled';
 import { loadMorePages } from '../../redux/psychologistsOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../../redux/psychologistsSlice';
-import { selectCurrentPage, selectTotalPages } from '../../redux/selectors';
+import { selectCurrentPage } from '../../redux/selectors';
 
 export const LoadMoreButton = ({ onClick }) => {
   const dispatch = useDispatch();

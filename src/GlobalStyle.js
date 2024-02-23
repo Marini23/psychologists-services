@@ -52,6 +52,7 @@ height: 100vh;
 /* height: '100vh'; */
 margin: 0 auto;
 color: #191A15;
+background-color: ${({ theme }) => theme.colors.background};
 font-size: 100%;
 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 
     sans-serif;
