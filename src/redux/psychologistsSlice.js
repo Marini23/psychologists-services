@@ -22,10 +22,14 @@ const psychologistsSlice = createSlice({
     totalPages: null,
     isLoading: false,
     error: null,
+    selectedFilter: '',
   },
   reducers: {
     changePage(state) {
       state.currentPage += 1;
+    },
+    setSelectedFilter: (state, action) => {
+      state.selectedFilter = action.payload;
     },
   },
 
@@ -48,7 +52,6 @@ const psychologistsSlice = createSlice({
       .addCase(loadMorePages.pending, handlePending)
       .addCase(loadMorePages.rejected, handleRejected)
       .addCase(loadMorePages.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.isLoading = false;
         state.error = null;
         state.psychologistsItems = [
@@ -58,6 +61,6 @@ const psychologistsSlice = createSlice({
       }),
 });
 
-export const { changePage } = psychologistsSlice.actions;
+export const { changePage, setSelectedFilter } = psychologistsSlice.actions;
 
 export const psychologistsReducer = psychologistsSlice.reducer;

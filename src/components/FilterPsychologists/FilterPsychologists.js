@@ -3,20 +3,23 @@ import { ThemeContext } from 'styled-components';
 import { FiltersContainer, Label } from './FilterPsychologists.styled';
 import { useContext } from 'react';
 import arrow from './arrow_select.svg';
+import { useDispatch } from 'react-redux';
+import { setSelectedFilter } from '../../redux/psychologistsSlice';
 
 const options = [
-  { value: 'A to Z', label: 'A to Z' },
-  { value: 'Z to A', label: 'Z to A' },
-  { value: 'Less than 10$', label: 'Less than 10$' },
-  { value: 'Greater than 10$', label: 'Greater than 10$' },
-  { value: 'Popular', label: 'Popular' },
-  { value: 'No popular', label: 'No popular' },
-  { value: 'Show all', label: 'Show all' },
+  { value: 'name_ascending', label: 'A to Z' },
+  { value: 'name_descending', label: 'Z to A' },
+  { value: 'price_per_hour_ascending', label: 'From min price' },
+  { value: 'price_per_hour_descending', label: 'From max price' },
+  { value: 'rating_descending', label: 'Popular' },
+  { value: 'rating_ascending', label: 'No popular' },
+  { value: '', label: 'Show all' },
 ];
 
 const { DropdownIndicator } = components;
 
 export const FilterPsychologists = () => {
+  const dispatch = useDispatch();
   const theme = useContext(ThemeContext);
 
   const customDropdownIndicator = props => {
@@ -25,6 +28,11 @@ export const FilterPsychologists = () => {
         <img src={arrow} alt="Dropdown Indicator" />
       </DropdownIndicator>
     );
+  };
+
+  const handleSubmit = selectedOption => {
+    const value = selectedOption.value;
+    dispatch(setSelectedFilter(value));
   };
   return (
     <FiltersContainer>
@@ -36,6 +44,7 @@ export const FilterPsychologists = () => {
         defaultValue={options[6]}
         isSearchable={false}
         components={{ DropdownIndicator: customDropdownIndicator }}
+        onChange={handleSubmit}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,

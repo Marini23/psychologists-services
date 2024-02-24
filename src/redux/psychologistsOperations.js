@@ -62,7 +62,6 @@ export const loadMorePages = createAsyncThunk(
   'psychologists/fetchMorePage',
   async (currentPage, thunkAPI) => {
     try {
-      console.log(' load more items');
       const per_page = 3;
       const startKey = (currentPage - 1) * per_page;
       const endKey = currentPage * per_page;
@@ -77,7 +76,6 @@ export const loadMorePages = createAsyncThunk(
           loadMore,
           snapshot => {
             const data = snapshot.val();
-            console.log('Data:', data);
             const dataArray = Object.values(data);
             resolve(dataArray);
           },
