@@ -19,10 +19,9 @@ export const Navigation = () => {
         <NavLinkStyledLogo to="/">
           <SpanLogo>psychologists.</SpanLogo>services
         </NavLinkStyledLogo>
-
         <NavLinkStyled to="/">Home</NavLinkStyled>
         <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
-
+        <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
         {isLoggedIn ? <UserMenu /> : <AuthMenu />}
       </NavStyled>
     </Header>

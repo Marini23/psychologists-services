@@ -19,6 +19,9 @@ export const selectCurrentPage = state => state.psychologists.currentPage;
 
 export const selectFilter = state => state.psychologists.selectedFilter;
 
+export const selectFavoritesPsychologists = state =>
+  state.favorites.favoritesPsychologists;
+
 export const selectFilteredPsychologists = createSelector(
   [selectPsychologistsItems, selectFilter],
   (psychologists, filter) => {

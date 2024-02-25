@@ -13,6 +13,7 @@ import {
 import { persistReducer } from 'redux-persist';
 import { authReducer } from './authSlice/authSlice';
 import { psychologistsReducer } from './psychologistsSlice';
+import { favoritesReducer } from './favoritesSlice/favoritesSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -20,10 +21,16 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const favoretesPersistConfig = {
+  key: 'favorites',
+  storage,
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     psychologists: psychologistsReducer,
+    favorites: persistReducer(favoretesPersistConfig, favoritesReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

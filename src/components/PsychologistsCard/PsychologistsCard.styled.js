@@ -92,12 +92,6 @@ export const PriceSpan = styled.span`
   color: ${({ theme }) => theme.colors.price};
 `;
 
-export const Heart = styled.img`
-  cursor: pointer;
-  width: 26px;
-  height: 26px;
-`;
-
 export const Container = styled.div`
   display: flex;
   gap: 16px;

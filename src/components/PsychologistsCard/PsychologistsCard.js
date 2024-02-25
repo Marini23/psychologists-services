@@ -1,5 +1,7 @@
 import StarIcon from './star.svg';
-import HeartIcon from './heart_normal.svg';
+import { FaHeart } from 'react-icons/fa6';
+import { FaRegHeart } from 'react-icons/fa6';
+import { ThemeContext } from 'styled-components';
 import {
   AboutText,
   BtnReadMore,
@@ -9,7 +11,6 @@ import {
   ContainerTitle,
   FeaturesSpan,
   FeaturesText,
-  Heart,
   Img,
   Item,
   Name,
@@ -22,11 +23,15 @@ import {
   Star,
 } from './PsychologistsCard.styled';
 import { ReadMoreInfo } from './ReadMoreInfo';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ModalWindow } from 'components/Modal/Modal';
 import { FormMakeAppointment } from 'components/FormMakeAppointment/FormMakeAppointment';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectPsychologistsItems } from '../../redux/selectors';
+import {
+  addFavorites,
+  deleteFavorites,
+} from '../../redux/favoritesSlice/favoritesSlice';
 export const PsychologistsCard = ({ psychologist }) => {
   const {
     name,
@@ -40,7 +45,8 @@ export const PsychologistsCard = ({ psychologist }) => {
     specialization,
     initial_consultation,
   } = psychologist;
-
+  const dispatch = useDispatch();
+  const theme = useContext(ThemeContext);
   const psychologists = useSelector(selectPsychologistsItems);
 
   const [isReadMore, setIsReadMore] = useState(false);
@@ -63,6 +69,20 @@ export const PsychologistsCard = ({ psychologist }) => {
     setIsReadMore(true);
   };
 
+  const isFavorite = useSelector(state =>
+    state.favorites.favoritesPsychologists.some(
+      favorite => favorite.name === name
+    )
+  );
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(deleteFavorites(psychologist));
+    } else {
+      dispatch(addFavorites(psychologist));
+    }
+  };
+
   return (
     <Item>
       <ContainerImg>
@@ -83,7 +103,25 @@ export const PsychologistsCard = ({ psychologist }) => {
             <PriceText>
               Price / 1 hour: <PriceSpan>{price_per_hour}$</PriceSpan>
             </PriceText>
-            <Heart src={HeartIcon} alt="Heart Icon" />
+            {isFavorite ? (
+              <FaHeart
+                style={{
+                  corsor: 'pointer',
+                  color: theme.colors.active,
+                }}
+                size="26px"
+                onClick={toggleFavorite}
+              />
+            ) : (
+              <FaRegHeart
+                style={{
+                  corsor: 'pointer',
+                  color: theme.colors.black,
+                }}
+                size="26px"
+                onClick={toggleFavorite}
+              />
+            )}
           </PriceRating>
         </ContainerTitle>
         <Container>
