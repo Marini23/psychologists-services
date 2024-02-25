@@ -7,6 +7,8 @@ import { selectIsRefreshing } from '../redux/selectors';
 import { Loader } from './Loader';
 import { PsychologistsPage } from 'pages/PsychologistsPage/PsychologistsPage';
 import { FavoritesPage } from 'pages/FavoritesPage/FavoritesPage';
+import PrivateRoute from './PrivateRoute';
+import { HomePage } from 'pages/HomePage/HomePage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,10 +24,13 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Layuot />}>
-          <Route index element={<div></div>} />
+          <Route index element={<HomePage />} />
           <Route path="/psychologists" element={<PsychologistsPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<div></div>} />
+          <Route
+            path="/favorites"
+            element={<PrivateRoute component={<FavoritesPage />} />}
+          />
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </div>

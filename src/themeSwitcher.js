@@ -8,12 +8,14 @@ export const green = {
     secondaryText: `rgba(25, 26, 21, 0.5)`,
     background: `#F3F3F3`,
     backgroundMain: `#FBFBFB`,
+    textOpacity: 'rgba(251, 251, 251, 0.5)',
     grey: `#8A8A89`,
     black: '#191A15',
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
     dropdownText: `rgba(25, 26, 21, 0.3)`,
     dropdownBg: `#FFFFFF`,
+    questionIcon: '#4535AF',
   },
 };
 
@@ -27,11 +29,14 @@ export const blue = {
     secondaryText: `rgba(25, 26, 21, 0.5)`,
     background: `#F3F3F3`,
     backgroundMain: `#FBFBFB`,
+    textOpacity: 'rgba(251, 251, 251, 0.5)',
     grey: `#8A8A89`,
     black: '#191A15',
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
     dropdownText: `rgba(25, 26, 21, 0.3)`,
+    dropdownBg: `#FFFFFF`,
+    questionIcon: '#54BE96',
   },
 };
 
@@ -45,9 +50,12 @@ export const orange = {
     secondaryText: `rgba(25, 26, 21, 0.5)`,
     background: `#F3F3F3`,
     backgroundMain: `#FBFBFB`,
+    textOpacity: 'rgba(251, 251, 251, 0.5)',
     grey: `#8A8A89`,
     borderColor: `rgba(25, 26, 21, 0.1)`,
     borderAuth: `rgba(25, 26, 21, 0.2)`,
     dropdownText: `rgba(25, 26, 21, 0.3)`,
+    dropdownBg: `#FFFFFF`,
+    questionIcon: '#54BE96',
   },
 };

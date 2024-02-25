@@ -49,7 +49,6 @@ html {
 body {
 width: 100%;
 height: 100vh;
-/* height: '100vh'; */
 margin: 0 auto;
 color: #191A15;
 background-color: ${({ theme }) => theme.colors.background};
