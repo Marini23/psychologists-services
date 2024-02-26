@@ -22,7 +22,7 @@ export const green = {
 export const blue = {
   name: 'blue-theme',
   colors: {
-    primary: `#54BE96`,
+    primary: `#3470FF`,
     secondary: `rgba(52, 112, 255, 0.2)`,
     active: `#255EE8`,
     price: `#38CD3E`,
@@ -44,7 +44,7 @@ export const orange = {
   name: 'orange-theme',
   colors: {
     primary: `#FC832C`,
-    secondarye: `rgba(252, 131, 44, 0.2)`,
+    secondary: `rgba(252, 131, 44, 0.2)`,
     active: `#F37113`,
     price: `#38CD3E`,
     secondaryText: `rgba(25, 26, 21, 0.5)`,

@@ -8,11 +8,15 @@ import InterSemiBold from './fonts/Inter-SemiBold.ttf';
 import InterBold from './fonts/Inter-Bold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
-* {
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;

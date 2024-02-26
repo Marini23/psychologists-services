@@ -27,7 +27,10 @@ import { useContext, useState } from 'react';
 import { ModalWindow } from 'components/Modal/Modal';
 import { FormMakeAppointment } from 'components/FormMakeAppointment/FormMakeAppointment';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPsychologistsItems } from '../../redux/selectors';
+import {
+  selectIsLoggedIn,
+  selectPsychologistsItems,
+} from '../../redux/selectors';
 import {
   addFavorites,
   deleteFavorites,
@@ -48,6 +51,7 @@ export const PsychologistsCard = ({ psychologist }) => {
   const dispatch = useDispatch();
   const theme = useContext(ThemeContext);
   const psychologists = useSelector(selectPsychologistsItems);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const [isReadMore, setIsReadMore] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -79,7 +83,9 @@ export const PsychologistsCard = ({ psychologist }) => {
     if (isFavorite) {
       dispatch(deleteFavorites(psychologist));
     } else {
-      dispatch(addFavorites(psychologist));
+      isLoggedIn
+        ? dispatch(addFavorites(psychologist))
+        : alert('This functionality is only available to authorized users.');
     }
   };
 

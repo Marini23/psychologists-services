@@ -19,6 +19,8 @@ export const selectCurrentPage = state => state.psychologists.currentPage;
 
 export const selectFilter = state => state.psychologists.selectedFilter;
 
+export const selectTheme = state => state.theme.selectedTheme;
+
 export const selectFavoritesPsychologists = state =>
   state.favorites.favoritesPsychologists;
 

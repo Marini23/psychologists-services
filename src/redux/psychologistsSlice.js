@@ -61,6 +61,7 @@ const psychologistsSlice = createSlice({
       }),
 });
 
-export const { changePage, setSelectedFilter } = psychologistsSlice.actions;
+export const { changePage, setSelectedFilter, setSelectedTheme } =
+  psychologistsSlice.actions;
 
 export const psychologistsReducer = psychologistsSlice.reducer;
