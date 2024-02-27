@@ -18,10 +18,6 @@ export const Name = styled.p`
   line-height: 1.25;
 `;
 
-export const Avatar = styled.img`
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
 export const Button = styled.button`
   cursor: pointer;
   white-space: nowrap;
@@ -39,4 +35,14 @@ export const Button = styled.button`
   &:active {
     background-color: ${props => `${props.theme.colors.active}`};
   }
+`;
+
+export const AvatarIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: ${props => `${props.theme.colors.primary}`};
+  border-radius: 10px;
 `;

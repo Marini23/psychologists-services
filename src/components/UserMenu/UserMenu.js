@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectName } from '../../redux/selectors';
 import { logOut } from '../../redux/authSlice/authOperations';
 
-import avatar from './avatar.svg';
+import avatar from './avatar_user.svg';
 import {
-  Avatar,
+  AvatarIcon,
   Button,
   Name,
   UserContainer,
@@ -18,7 +18,9 @@ export const UserMenu = () => {
   return (
     <UserContainer>
       <UserInfo>
-        <Avatar src={avatar} alt="avatar" width={40} height={40} />
+        <AvatarIcon>
+          <img src={avatar} alt="avatar" width={24} height={24} />
+        </AvatarIcon>
         <Name>{name}</Name>
       </UserInfo>
       <Button type="button" onClick={() => dispatch(logOut())}>

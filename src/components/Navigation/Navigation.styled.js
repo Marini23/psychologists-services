@@ -1,12 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import ellipse from './ellipse.svg';
 
 export const Header = styled.header`
   position: fixed;
   width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
   height: 96px;
   margin: 0 auto;
+  padding-left: 8.88%;
+  padding-right: 8.88%;
   top: 0;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
 
@@ -17,15 +20,11 @@ export const Header = styled.header`
 
 export const NavStyled = styled.nav`
   width: 100%;
-  max-width: 1440px;
-  min-width: 320px;
   margin: 0 auto;
   height: 96px;
   display: flex;
   justify-content: start;
   align-items: center;
-  padding-left: 8.88%;
-  padding-right: 8.88%;
 `;
 
 export const NavLinkStyledLogo = styled(NavLink)`
@@ -65,12 +64,16 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:after {
-    content: url(${ellipse});
+    content: '';
     position: absolute;
     top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0; /* Initially hidden */
+    width: 8px;
+    height: 8px;
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: 50%;
+    opacity: 0;
     transition: opacity 0.3s ease;
   }
 

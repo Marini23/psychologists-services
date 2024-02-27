@@ -2,10 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'modern-normalize';
 
-import InterRegular from './fonts/Inter-Regular.ttf';
-import InterMedium from './fonts/Inter-Medium.ttf';
-import InterSemiBold from './fonts/Inter-SemiBold.ttf';
-import InterBold from './fonts/Inter-Bold.ttf';
+import InterRegular from '../fonts/Inter-Regular.ttf';
+import InterMedium from '../fonts/Inter-Medium.ttf';
+import InterSemiBold from '../fonts/Inter-SemiBold.ttf';
+import InterBold from '../fonts/Inter-Bold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -55,7 +55,7 @@ width: 100%;
 height: 100vh;
 margin: 0 auto;
 color: #191A15;
-background-color: ${({ theme }) => theme.colors.background};
+/* background-color: ${({ theme }) => theme.colors.background}; */
 font-size: 100%;
 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 
     sans-serif;

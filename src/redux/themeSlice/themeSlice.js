@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { green } from 'themeSwitcher';
+import { green } from 'styles/themeSwitcher';
 
 const ThemeSlice = createSlice({
   name: `theme`,

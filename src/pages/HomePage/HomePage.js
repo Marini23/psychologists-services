@@ -2,6 +2,7 @@ import {
   Box,
   BoxContainerContent,
   Button,
+  CheckArrow,
   CheckIcon,
   Container,
   ContentContainer,
@@ -48,7 +49,7 @@ export const HomePage = () => {
           <Box>
             <BoxContainerContent>
               <CheckIcon>
-                <img src={checkIcon} alt="Check icon" />
+                <CheckArrow src={checkIcon} alt="Check icon" />
               </CheckIcon>
               <TextContainer>
                 <TextInfo>Experienced psychologists</TextInfo>

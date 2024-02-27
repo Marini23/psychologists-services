@@ -5,5 +5,4 @@ export const List = styled.ul`
   flex-direction: column;
   gap: 26px;
   margin-bottom: 64px;
-  background-color: ${({ theme }) => theme.colors.background};
 `;

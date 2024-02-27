@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* position: relative; */
   display: flex;
   width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  padding-left: 8.88%;
+  padding-right: 8.88%;
   height: 100vh;
   display: flex;
   margin: 0 auto;
@@ -16,11 +19,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
-  min-width: 320px;
   margin: 0 auto;
-  padding-left: 8.88%;
-  padding-right: 8.88%;
 `;
 
 export const ContentContainer = styled.div`
@@ -53,7 +52,7 @@ export const Text = styled.p`
 export const Button = styled.div`
   cursor: pointer;
   display: flex;
-  gap: 18px;
+  gap: 1.125rem;
   align-items: center;
   justify-content: center;
   width: 235px;
@@ -90,6 +89,7 @@ export const ImagesContainer = styled.div`
   position: relative;
   display: flex;
   margin-left: auto;
+  width: 39.19%;
 `;
 
 export const Box = styled.div`
@@ -97,37 +97,49 @@ export const Box = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 333px;
-  left: -101px;
+  top: 63.307%;
+  left: -21.767%;
+  /* top: 333px;
+  left: -101px; */
   display: flex;
-  width: 311px;
-  height: 118px;
+  width: 67.02%;
+  height: 22.43%;
+  /* width: 311px;
+  height: 118px; */
   border-radius: 13px;
   border: none;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const BoxContainerContent = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 1rem;
 `;
 
 export const CheckIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 17.363%;
+  height: 47.63%;
+  /* width: 54px;
+  height: 54px; */
   border-radius: 13px;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
+`;
+export const CheckArrow = styled.img`
+  width: 55.5555%;
+  height: 55.5555%;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 `;
 
 export const TextInfo = styled.p`
@@ -145,14 +157,17 @@ export const NumberInfo = styled.p`
 `;
 
 export const Img = styled.img`
-  width: 464px;
-  height: 526px;
+  width: 100%;
+  /* width: 464px;
+  height: 526px; */
 `;
 
 export const PeopleIcon = styled.img`
   position: absolute;
-  left: 449px;
-  top: 38px;
+  /* left: 449px;
+  top: 38px; */
+  left: 96.7672%;
+  top: 7.23%;
 `;
 
 export const QuestionIconContainer = styled.div`
@@ -162,8 +177,10 @@ export const QuestionIconContainer = styled.div`
   width: 40px;
   height: 40px;
   position: absolute;
-  top: 195.35px;
-  left: -39px;
+  /* top: 195.35px;
+  left: -39px; */
+  top: 37.13%;
+  left: -8.41%;
   border-radius: 10px;
   transform: rotate(-15deg);
   background-color: ${({ theme }) => theme.colors.questionIcon};

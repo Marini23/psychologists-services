@@ -9,7 +9,7 @@ import { PsychologistsPage } from 'pages/PsychologistsPage/PsychologistsPage';
 import { FavoritesPage } from 'pages/FavoritesPage/FavoritesPage';
 import PrivateRoute from './PrivateRoute';
 import { HomePage } from 'pages/HomePage/HomePage';
-import { GlobalStyle } from 'GlobalStyle';
+import { GlobalStyle } from 'styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 
 export const App = () => {

@@ -10,13 +10,21 @@ import {
   RoundOrange,
 } from './ThemeSwitcher.styled';
 
-import { green, blue, orange } from 'themeSwitcher';
+import { green, blue, orange } from '../../styles/themeSwitcher';
 import { selectTheme } from '../../redux/selectors';
 import { setSelectedTheme } from '../../redux/themeSlice/themeSlice';
+import { useEffect } from 'react';
 
 export const ThemeSwitcher = () => {
   const dispatch = useDispatch();
   const selectedTheme = useSelector(selectTheme);
+
+  useEffect(() => {
+    if (!selectedTheme) {
+      dispatch(setSelectedTheme(green));
+    }
+  }, [dispatch, selectedTheme]);
+
   const HandleThemeChange = theme => {
     dispatch(setSelectedTheme(theme));
   };
@@ -31,7 +39,7 @@ export const ThemeSwitcher = () => {
             name="theme"
             value="green-theme"
             onChange={() => HandleThemeChange(green)}
-            checked={selectedTheme === green}
+            checked={selectedTheme.name === green.name}
           />
           <RoundGreen className="switcher"></RoundGreen>
         </Container>
@@ -42,6 +50,7 @@ export const ThemeSwitcher = () => {
             name="theme"
             value="blue-theme"
             onChange={() => HandleThemeChange(blue)}
+            checked={selectedTheme.name === blue.name}
           />
           <RoundBlue className="switcher"></RoundBlue>
         </Container>
@@ -52,6 +61,7 @@ export const ThemeSwitcher = () => {
             name="theme"
             value="orange-theme"
             onChange={() => HandleThemeChange(orange)}
+            checked={selectedTheme.name === orange.name}
           />
           <RoundOrange className="switcher"></RoundOrange>
         </Container>
