@@ -9,7 +9,7 @@ export const EmptyFavoritesMessage = styled.p`
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 1.625rem;
   margin-bottom: 64px;
   background-color: ${({ theme }) => theme.colors.background};
 `;

@@ -31,7 +31,8 @@ export const ContentContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 5rem;
+  /* font-size: 5rem; */
+  font-size: clamp(2rem, 4vw + 1.5rem, 5rem);
   font-weight: 600;
   line-height: 1.025;
   color: ${({ theme }) => theme.colors.black};
@@ -43,7 +44,8 @@ export const SpanTitle = styled.span`
 
 export const Text = styled.p`
   width: 85.74%;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 4vw + 1rem, 1.125rem);
+  /* font-size: 1.125rem; */
   font-weight: 500;
   line-height: 1.33;
   color: ${({ theme }) => theme.colors.black};
@@ -95,7 +97,9 @@ export const ImagesContainer = styled.div`
 export const Box = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 6.896%;
+  padding-right: 6.896%;
   position: absolute;
   top: 63.307%;
   left: -21.767%;
@@ -116,7 +120,7 @@ export const BoxContainerContent = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 1rem;
 `;
 
@@ -124,8 +128,8 @@ export const CheckIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 17.363%;
-  height: 47.63%;
+  width: 21.86%;
+  height: 45.77%;
   /* width: 54px;
   height: 54px; */
   border-radius: 13px;
@@ -143,14 +147,15 @@ export const TextContainer = styled.div`
 `;
 
 export const TextInfo = styled.p`
-  font-size: 0.875rem;
+  font-size: clamp(0.5rem, calc(1vw + 0.7rem), 0.875rem);
+  /* font-size: 0.875rem; */
   font-weight: 400;
   line-height: 1.21;
   color: ${({ theme }) => theme.colors.textOpacity};
 `;
 
 export const NumberInfo = styled.p`
-  font-size: 1.5rem;
+  font-size: clamp(1rem, calc(1vw + 0.7rem), 1.5rem);
   font-weight: 700;
   line-height: 1.21;
   color: ${({ theme }) => theme.colors.backgroundMain};

@@ -5,18 +5,18 @@ export const ReviewsList = styled.ul`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
-  gap: 24px;
+  gap: 1.5rem;
 `;
 
 export const ReviewItem = styled.li`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 `;
 
 export const Container = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
 `;
 
 export const Avatar = styled.div`

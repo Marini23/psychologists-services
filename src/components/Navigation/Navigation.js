@@ -10,6 +10,7 @@ import { selectIsLoggedIn } from '../../redux/selectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { AuthMenu } from 'components/AuthMenu/AuthMenu';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
+// import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -20,11 +21,14 @@ export const Navigation = () => {
         <NavLinkStyledLogo to="/">
           <SpanLogo>psychologists.</SpanLogo>services
         </NavLinkStyledLogo>
+
         <NavLinkStyled to="/">Home</NavLinkStyled>
         <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
         {isLoggedIn && <NavLinkStyled to="/Favorites">Favorites</NavLinkStyled>}
         {isLoggedIn ? <UserMenu /> : <AuthMenu />}
+
         <ThemeSwitcher />
+        {/* <BurgerMenu /> */}
       </NavStyled>
     </Header>
   );

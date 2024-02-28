@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import TimePicker from 'react-time-picker';
 
 export const ErrorMessage = styled.div`
   color: #dc2f2f;
@@ -8,7 +7,7 @@ export const ErrorMessage = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.125rem;
 `;
 
 export const Title = styled.h2`
@@ -29,7 +28,7 @@ export const Text = styled.p`
 export const ContainerInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 0.875rem;
 `;
 
 export const Img = styled.img`
@@ -126,57 +125,5 @@ export const Button = styled.button`
   }
   &:focus {
     background-color: ${props => `${props.theme.colors.active}`};
-  }
-`;
-
-export const CustomTimePicker = styled(TimePicker)`
-  /* Styles for the TimePicker wrapper */
-  .react-time-picker__wrapper {
-    /* Your styles here */
-    width: 100%;
-    width: 200px;
-    cursor: pointer;
-    height: 52px;
-    border-radius: 12px;
-    border: 1px solid ${({ theme }) => theme.colors.borderColor};
-    padding-left: 16px;
-    line-height: 1.25;
-    &::placeholder {
-      color: ${({ theme }) => theme.colors.black};
-    }
-    &:hover,
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .custom-time-picker__dropdown {
-    /* Styles for the dropdown */
-  }
-
-  /* Styles for the TimePicker input */
-  .react-time-picker__inputGroup {
-    /* Your styles here */
-    width: 100%;
-  }
-
-  /* Styles for the TimePicker clock */
-  .react-time-picker__clock {
-    /* Your styles here */
-  }
-
-  /* Styles for the TimePicker clock face */
-  .react-time-picker__clockFace {
-    /* Your styles here */
-  }
-
-  /* Styles for the TimePicker clock hand */
-  .react-time-picker__clockHand {
-    /* Your styles here */
-  }
-
-  /* Styles for the TimePicker clock marks */
-  .react-time-picker__clockMarks {
-    /* Your styles here */
   }
 `;

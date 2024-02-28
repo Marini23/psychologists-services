@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const Item = styled.li`
   position: relative;
   display: flex;
-  gap: 24px;
   width: 100%;
   max-width: 1184px;
   border-radius: 24px;
-  padding: 24px;
+  padding: 1.5rem;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
   color: ${({ theme }) => theme.colors.grey};
 `;
@@ -16,7 +15,9 @@ export const ContainerImg = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 1.5rem;
   width: 120px;
+  min-width: 120px;
   height: 120px;
   border-radius: 30px;
   border: 2px solid ${({ theme }) => theme.colors.borderAuth};
@@ -31,19 +32,20 @@ export const Img = styled.img`
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 83.78%;
+  width: 87.78%;
 `;
 
 export const ContainerTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 `;
 
 export const Name = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
   font-weight: 500;
   line-height: 1.5;
 `;
@@ -55,13 +57,14 @@ export const NameText = styled.h3`
 
 export const PriceRating = styled.div`
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 1rem;
   height: 24px;
 `;
 
 export const Rating = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   align-items: center;
 `;
 
@@ -94,13 +97,14 @@ export const PriceSpan = styled.span`
 
 export const Container = styled.div`
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
 
 export const FeaturesText = styled.p`
   display: flex;
   gap: 10px;
-  padding: 8px 16px;
+  padding: 8px 1rem;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.background};
   font-weight: 500;

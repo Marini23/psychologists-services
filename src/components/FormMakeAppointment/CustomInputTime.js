@@ -12,11 +12,6 @@ export const CustomTimePicker = ({ value, onChange }) => {
     return options;
   };
 
-  //   const handleOnChange = event => {
-  //     const selectedValue = event.target.value;
-  //     onChange(selectedValue);
-  //   };
-
   return (
     <select value={value} onChange={onChange}>
       {generateTimeOptions().map(option => (
