@@ -27,12 +27,10 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   width: 50.25%;
   max-width: 595px;
-  height: 438px;
 `;
 
 export const Title = styled.h1`
-  /* font-size: 5rem; */
-  font-size: clamp(2rem, 4vw + 1.5rem, 5rem);
+  font-size: clamp(54px, (54px + 80 * (100vw - 1120px) / 320), 80px);
   font-weight: 600;
   line-height: 1.025;
   color: ${({ theme }) => theme.colors.black};
@@ -44,8 +42,7 @@ export const SpanTitle = styled.span`
 
 export const Text = styled.p`
   width: 85.74%;
-  font-size: clamp(1rem, 4vw + 1rem, 1.125rem);
-  /* font-size: 1.125rem; */
+  font-size: clamp(16px, (16px + 18 * (100vw - 1120px) / 320), 18px);
   font-weight: 500;
   line-height: 1.33;
   color: ${({ theme }) => theme.colors.black};
@@ -97,9 +94,8 @@ export const ImagesContainer = styled.div`
 export const Box = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  padding-left: 6.896%;
-  padding-right: 6.896%;
+  /* padding-left: 6.896%; */
+  /* padding-right: 6.896%; */
   position: absolute;
   top: 63.307%;
   left: -21.767%;
@@ -120,7 +116,7 @@ export const BoxContainerContent = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  padding-left: 6.896%;
   gap: 1rem;
 `;
 
@@ -128,7 +124,7 @@ export const CheckIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 21.86%;
+  width: 18.65%;
   height: 45.77%;
   /* width: 54px;
   height: 54px; */
@@ -163,6 +159,8 @@ export const NumberInfo = styled.p`
 
 export const Img = styled.img`
   width: 100%;
+  object-fit: contain;
+  /* height: 526px; */
   /* width: 464px;
   height: 526px; */
 `;

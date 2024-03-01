@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
   position: fixed;
   width: 100%;
   max-width: 1440px;
@@ -27,6 +29,17 @@ export const NavStyled = styled.nav`
   align-items: center;
 `;
 
+export const NavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  /* margin-left: auto; */
+  margin-right: auto;
+  @media screen and (max-width: 1120px) {
+    display: none;
+  }
+`;
+
 export const NavLinkStyledLogo = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
@@ -34,7 +47,7 @@ export const NavLinkStyledLogo = styled(NavLink)`
   font-weight: 600;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.black};
-  margin-right: 9.02%;
+  margin-right: 7.9%;
 
   &:visited {
     color: inherit;
@@ -56,7 +69,6 @@ export const NavLinkStyled = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
   line-height: 1.25;
-  margin-right: 2.777%;
   color: ${({ theme }) => theme.colors.black};
 
   &:visited {

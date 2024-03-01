@@ -11,7 +11,7 @@ export const Container = styled.label`
   position: relative;
   display: inline-block;
   width: 50px;
-  height: 20px;
+  height: 12px;
 `;
 
 export const InputGreen = styled.input`
@@ -47,7 +47,7 @@ export const RoundGreen = styled.span`
     height: 15px;
     width: 15px;
     left: 4px;
-    top: 2px;
+    top: -1.5px;
     border-radius: 50%;
     background-color: #54be96;
     -webkit-transition: 0.4s;
@@ -88,7 +88,7 @@ export const RoundBlue = styled.span`
     height: 15px;
     width: 15px;
     left: 4px;
-    top: 2px;
+    top: -1.5px;
     border-radius: 50%;
     background-color: #3470ff;
     -webkit-transition: 0.4s;
@@ -129,7 +129,7 @@ export const RoundOrange = styled.span`
     height: 15px;
     width: 15px;
     left: 4px;
-    top: 2px;
+    top: -1.5px;
     border-radius: 50%;
     background-color: #fc832c;
     -webkit-transition: 0.4s;

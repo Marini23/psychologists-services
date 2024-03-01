@@ -4,6 +4,9 @@ export const AuthContainer = styled.div`
   display: flex;
   margin-left: auto;
   gap: 0.5rem;
+  @media screen and (max-width: 1120px) {
+    display: none;
+  }
 `;
 export const BtnRegistration = styled.button`
   cursor: pointer;

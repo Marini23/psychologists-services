@@ -5,6 +5,9 @@ export const UserContainer = styled.div`
   align-items: center;
   gap: 1.75rem;
   margin-left: auto;
+  @media screen and (max-width: 1120px) {
+    display: none;
+  }
 `;
 
 export const UserInfo = styled.div`

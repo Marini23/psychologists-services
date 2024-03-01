@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  display: none;
   position: fixed;
   width: 100%;
   max-width: 1440px;
@@ -16,6 +17,16 @@ export const Header = styled.header`
   color: ${({ theme }) => theme.colors.black};
   z-index: 1;
   border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
+  @media screen and (max-width: 1120px) {
+    display: flex;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: none;
+  @media screen and (max-width: 1120px) {
+    display: flex;
+  }
 `;
 
 export const NavStyled = styled.nav`
@@ -62,24 +73,6 @@ export const NavLinkStyled = styled(NavLink)`
   &:visited {
     color: inherit;
   }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background-color: ${({ theme }) => theme.colors.primary};
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &.active:after {
-    opacity: 1;
-  }
 `;
 
 export const AvatarIcon = styled.div`
@@ -96,9 +89,25 @@ export const UserInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 0.875rem;
+  margin-bottom: 14px;
 `;
 
 export const Name = styled.p`
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.25;
+`;
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.875rem;
+  margin-bottom: 14px;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 14px;
 `;
