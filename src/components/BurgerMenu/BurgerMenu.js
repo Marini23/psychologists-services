@@ -2,12 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   AvatarIcon,
   Button,
-  Header,
   List,
   Name,
   NavLinkStyled,
-  NavLinkStyledLogo,
-  SpanLogo,
   UserInfo,
   Wrapper,
 } from './BurgerMenu.styled';
