@@ -11,6 +11,7 @@ import {
   ContainerTitle,
   FeaturesSpan,
   FeaturesText,
+  HeartIcon,
   Img,
   Item,
   Name,
@@ -109,25 +110,27 @@ export const PsychologistsCard = ({ psychologist }) => {
             <PriceText>
               Price / 1 hour: <PriceSpan>{price_per_hour}$</PriceSpan>
             </PriceText>
-            {isFavorite ? (
-              <FaHeart
-                style={{
-                  corsor: 'pointer',
-                  color: theme.colors.active,
-                }}
-                size="26px"
-                onClick={toggleFavorite}
-              />
-            ) : (
-              <FaRegHeart
-                style={{
-                  corsor: 'pointer',
-                  color: theme.colors.black,
-                }}
-                size="26px"
-                onClick={toggleFavorite}
-              />
-            )}
+            <HeartIcon>
+              {isFavorite ? (
+                <FaHeart
+                  style={{
+                    corsor: 'pointer',
+                    color: theme.colors.active,
+                  }}
+                  size="26px"
+                  onClick={toggleFavorite}
+                />
+              ) : (
+                <FaRegHeart
+                  style={{
+                    corsor: 'pointer',
+                    color: theme.colors.black,
+                  }}
+                  size="26px"
+                  onClick={toggleFavorite}
+                />
+              )}
+            </HeartIcon>
           </PriceRating>
         </ContainerTitle>
         <Container>

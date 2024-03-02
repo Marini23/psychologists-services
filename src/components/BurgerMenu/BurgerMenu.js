@@ -79,6 +79,8 @@ export const BurgerMenu = () => {
     bmCrossButton: {
       height: '24px',
       width: '24px',
+      top: '20px',
+      right: '40px',
     },
     bmOverlay: {
       top: 0,

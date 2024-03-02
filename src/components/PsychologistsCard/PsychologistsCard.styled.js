@@ -5,10 +5,20 @@ export const Item = styled.li`
   display: flex;
   width: 100%;
   max-width: 1184px;
+  min-width: 320px;
   border-radius: 24px;
   padding: 1.5rem;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
   color: ${({ theme }) => theme.colors.grey};
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const HeartIcon = styled.div`
+  position: absolute;
+  top: 24px;
+  right: 24px;
 `;
 
 export const ContainerImg = styled.div`
@@ -33,6 +43,9 @@ export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
   width: 87.78%;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const ContainerTitle = styled.div`
@@ -40,6 +53,7 @@ export const ContainerTitle = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 24px;
+  margin-right: 40px;
 `;
 
 export const Name = styled.div`
@@ -60,6 +74,9 @@ export const PriceRating = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   height: 24px;
+  @media screen and (max-width: 780px) {
+    height: auto;
+  }
 `;
 
 export const Rating = styled.div`
@@ -103,6 +120,7 @@ export const Container = styled.div`
 
 export const FeaturesText = styled.p`
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 8px 1rem;
   border-radius: 24px;

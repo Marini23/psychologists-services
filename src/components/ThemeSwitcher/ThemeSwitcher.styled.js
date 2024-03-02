@@ -12,6 +12,9 @@ export const Container = styled.label`
   display: inline-block;
   width: 50px;
   height: 12px;
+  @media screen and (max-width: 768px) {
+    width: 40px;
+  }
 `;
 
 export const InputGreen = styled.input`

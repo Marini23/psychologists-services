@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.main`
   display: flex;
   width: 100%;
   max-width: 1440px;
   min-width: 320px;
   padding-left: 8.88%;
   padding-right: 8.88%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   margin: 0 auto;
   padding-top: 126px;
@@ -20,6 +20,9 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  @media screen and (max-width: 1119px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -27,6 +30,11 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   width: 50.25%;
   max-width: 595px;
+  @media screen and (max-width: 1119px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 export const Title = styled.h1`
@@ -34,6 +42,10 @@ export const Title = styled.h1`
   font-weight: 600;
   line-height: 1.025;
   color: ${({ theme }) => theme.colors.black};
+  margin-bottom: 20px;
+  @media screen and (max-width: 1119px) {
+    font-size: clamp(32px, (32px + 54 * (100vw - 320px) / 320), 32px);
+  }
 `;
 
 export const SpanTitle = styled.span`
@@ -66,6 +78,10 @@ export const Button = styled.div`
   &:focus {
     background-color: ${props => `${props.theme.colors.active}`};
   }
+  @media screen and (max-width: 480px) {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 `;
 
 export const Link = styled.a`
@@ -89,6 +105,18 @@ export const ImagesContainer = styled.div`
   display: flex;
   margin-left: auto;
   width: 39.19%;
+  @media screen and (max-width: 1120px) {
+    width: 50.43%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 73.53%;
+  }
+  @media screen and (max-width: 480px) {
+    width: 90%;
+  }
 `;
 
 export const Box = styled.div`
@@ -109,6 +137,11 @@ export const Box = styled.div`
   border-radius: 13px;
   border: none;
   background-color: ${({ theme }) => theme.colors.primary};
+  @media screen and (max-width: 480px) {
+    left: -08.767%;
+    width: 87.02%;
+    height: 24.43%;
+  }
 `;
 
 export const BoxContainerContent = styled.div`
@@ -171,6 +204,9 @@ export const PeopleIcon = styled.img`
   top: 38px; */
   left: 96.7672%;
   top: 7.23%;
+  @media screen and (max-width: 480px) {
+    left: 87.7672%;
+  }
 `;
 
 export const QuestionIconContainer = styled.div`
