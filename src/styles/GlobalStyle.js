@@ -52,6 +52,8 @@ html {
 
 body {
 width: 100%;
+min-width: 320px;
+max-width: 1440px;
 height: 100vh;
 margin: 0 auto;
 color: #191A15;

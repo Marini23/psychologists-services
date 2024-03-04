@@ -45,7 +45,8 @@ export const FormMakeAppointment = ({ selectedPsychologist, isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: values => {
-      console.log(values);
+      // console.log(values);
+      alert('An appointment  is scheduled successfully');
       // dispatch(logIn(values));
       isClose();
       formik.resetForm();

@@ -12,7 +12,7 @@ import { selectIsLoggedIn, selectName } from '../../redux/selectors';
 import avatar from '../UserMenu/avatar_user.svg';
 import { slide as Menu } from 'react-burger-menu';
 import { ReactComponent as CloseIcon } from './close_icon.svg';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { ModalWindow } from 'components/Modal/Modal';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
@@ -27,6 +27,35 @@ export const BurgerMenu = () => {
   const [modalIsOpenRegister, setModalIsOpenRegister] = useState(false);
   const [modalIsOpenLogIn, setModalIsOpenLogIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [burgerButtonSize, setBurgerButtonSize] = useState({
+    width: '46px',
+    height: '40px',
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 560) {
+        setBurgerButtonSize({
+          width: `30px`,
+          height: `26px`,
+        });
+      } else if (window.innerWidth <= 768) {
+        setBurgerButtonSize({
+          width: `36px`,
+          height: `30px`,
+        });
+      } else {
+        setBurgerButtonSize({
+          width: '46px',
+          height: '40px',
+        });
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
@@ -53,15 +82,15 @@ export const BurgerMenu = () => {
   const styles = {
     bmBurgerButton: {
       position: 'relative',
-      marginLeft: '20px',
-      width: '46px',
-      height: '40px',
+      marginLeft: '2%',
+      width: burgerButtonSize.width,
+      height: burgerButtonSize.height,
     },
     bmBurgerBars: {
-      background: '#373a47',
+      background: theme.colors.primary,
     },
     bmBurgerBarsHover: {
-      background: '#a90000',
+      background: theme.colors.active,
     },
     bmMenuWrap: {
       position: 'fixed',

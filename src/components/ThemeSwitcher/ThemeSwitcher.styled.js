@@ -4,7 +4,7 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-left: 20px;
+  margin-left: 4%;
 `;
 
 export const Container = styled.label`
@@ -13,7 +13,12 @@ export const Container = styled.label`
   width: 50px;
   height: 12px;
   @media screen and (max-width: 768px) {
-    width: 40px;
+    width: 36px;
+    height: 8px;
+  }
+  @media screen and (max-width: 560px) {
+    width: 30px;
+    height: 6px;
   }
 `;
 
@@ -28,6 +33,13 @@ export const InputGreen = styled.input`
 
   &:checked + .switcher::before {
     transform: translateX(27px);
+
+    @media screen and (max-width: 768px) {
+      transform: translateX(17px);
+    }
+    @media screen and (max-width: 560px) {
+      transform: translateX(14px);
+    }
   }
 `;
 
@@ -55,6 +67,16 @@ export const RoundGreen = styled.span`
     background-color: #54be96;
     -webkit-transition: 0.4s;
     transition: 0.3s ease;
+    @media screen and (max-width: 768px) {
+      width: 12px;
+      height: 12px;
+      top: -1px;
+    }
+    @media screen and (max-width: 560px) {
+      width: 8px;
+      height: 8px;
+      top: -1px;
+    }
   }
 `;
 
@@ -69,6 +91,13 @@ export const InputBlue = styled.input`
 
   &:checked + .switcher::before {
     transform: translateX(27px);
+
+    @media screen and (max-width: 768px) {
+      transform: translateX(17px);
+    }
+    @media screen and (max-width: 560px) {
+      transform: translateX(14px);
+    }
   }
 `;
 
@@ -96,6 +125,16 @@ export const RoundBlue = styled.span`
     background-color: #3470ff;
     -webkit-transition: 0.4s;
     transition: 0.3s ease;
+    @media screen and (max-width: 768px) {
+      width: 12px;
+      height: 12px;
+      top: -1px;
+    }
+    @media screen and (max-width: 560px) {
+      width: 8px;
+      height: 8px;
+      top: -1px;
+    }
   }
 `;
 
@@ -110,6 +149,13 @@ export const InputOrange = styled.input`
 
   &:checked + .switcher::before {
     transform: translateX(27px);
+
+    @media screen and (max-width: 768px) {
+      transform: translateX(17px);
+    }
+    @media screen and (max-width: 560px) {
+      transform: translateX(14px);
+    }
   }
 `;
 
@@ -137,5 +183,15 @@ export const RoundOrange = styled.span`
     background-color: #fc832c;
     -webkit-transition: 0.4s;
     transition: 0.3s ease;
+    @media screen and (max-width: 768px) {
+      width: 12px;
+      height: 12px;
+      top: -1px;
+    }
+    @media screen and (max-width: 560px) {
+      width: 8px;
+      height: 8px;
+      top: -1px;
+    }
   }
 `;
