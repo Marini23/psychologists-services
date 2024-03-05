@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { BtnLoadMore } from './LoadMoreButton.styled';
-import { loadMorePages } from '../../redux/psychologistsOperations';
+import { loadMorePages } from '../../redux/psychologistsSlice/psychologistsOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { changePage } from '../../redux/psychologistsSlice';
+import { changePage } from '../../redux/psychologistsSlice/psychologistsSlice';
 import { selectCurrentPage } from '../../redux/selectors';
 
 export const LoadMoreButton = ({ onClick }) => {

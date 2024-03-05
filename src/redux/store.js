@@ -12,7 +12,7 @@ import {
 
 import { persistReducer } from 'redux-persist';
 import { authReducer } from './authSlice/authSlice';
-import { psychologistsReducer } from './psychologistsSlice';
+import { psychologistsReducer } from './psychologistsSlice/psychologistsSlice';
 import { favoritesReducer } from './favoritesSlice/favoritesSlice';
 import { themeReducer } from './themeSlice/themeSlice';
 

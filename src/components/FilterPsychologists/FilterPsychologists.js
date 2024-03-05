@@ -4,7 +4,7 @@ import { FiltersContainer, Label } from './FilterPsychologists.styled';
 import { useContext } from 'react';
 import arrow from './arrow_select.svg';
 import { useDispatch } from 'react-redux';
-import { setSelectedFilter } from '../../redux/psychologistsSlice';
+import { setSelectedFilter } from '../../redux/psychologistsSlice/psychologistsSlice';
 
 const options = [
   { value: 'name_ascending', label: 'A to Z' },

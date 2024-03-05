@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchFirstPage,
   fetchTotalHits,
-} from '../../redux/psychologistsOperations';
+} from '../../redux/psychologistsSlice/psychologistsOperations';
 import { PsychologistsList } from 'components/PsychologistsList/PsychologistsList';
 import { Container } from './PsychologistsPage.styled';
 import { LoadMoreButton } from 'components/LoadMoreButton/LoadMoreButton';

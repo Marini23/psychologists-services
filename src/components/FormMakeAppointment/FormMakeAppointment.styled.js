@@ -13,15 +13,17 @@ export const Form = styled.form`
 export const Title = styled.h2`
   display: flex;
   flex-wrap: wrap;
-  font-size: 2.5rem;
+  font-size: clamp(20px, calc(20px + 20 * ((100vw - 768px) / 672)), 40px);
   font-weight: 500;
   line-height: 1.2;
+  width: 78.667%;
 `;
 
 export const Text = styled.p`
   display: flex;
   flex-wrap: wrap;
   line-height: 1.25;
+  font-size: clamp(14px, (14px + 16 * (100vw - 320px) / 320), 16px);
   color: ${({ theme }) => theme.colors.secondaryText};
 `;
 
@@ -56,7 +58,7 @@ export const NameTitle = styled.h3`
 export const Input = styled.input`
   width: 100%;
   cursor: pointer;
-  height: 52px;
+  height: 42px;
   border-radius: 12px;
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
   padding-left: 16px;
@@ -73,7 +75,7 @@ export const Input = styled.input`
 export const InputTime = styled.input`
   width: 100%;
   cursor: pointer;
-  height: 52px;
+  height: 42px;
   border-radius: 12px;
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
   padding-left: 16px;
@@ -95,7 +97,7 @@ export const TelTimeContainer = styled.div`
 export const InputComment = styled.textarea`
   width: 100%;
   cursor: pointer;
-  height: 116px;
+  height: 96px;
   border-radius: 12px;
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
   padding-left: 16px;
@@ -115,7 +117,6 @@ export const Button = styled.button`
   height: 52px;
   border-radius: 30px;
   border: none;
-  margin-top: 32px;
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.backgroundMain};
   font-weight: 500;
