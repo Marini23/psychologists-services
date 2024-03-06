@@ -7,6 +7,12 @@ Open
 [Psychologists.services](https://marini23.github.io/psychologists-services/) to
 view the website.
 
+Task:
+https://docs.google.com/document/d/1PrTxBn6HQbb0Oz17g5_zvyLGIOZg0TIP3HPaEEp6ZLs/edit
+
+Figma layout:
+https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services?type=design&node-id=42-804&mode=design&t=A4tKG1v9yprCH5e7-0
+
 ## Features
 
 - **Browse Psychologists**: View a list of psychologists and their details.

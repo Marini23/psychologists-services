@@ -10,7 +10,7 @@ export const Container = styled.main`
   /* height: 100vh; */
   display: flex;
   margin: 0 auto;
-  padding-top: 126px;
+  padding-top: 174px;
   padding-bottom: 64px;
   background-color: ${({ theme }) => theme.colors.backgroundMain};
 `;
