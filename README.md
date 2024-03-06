@@ -1,4 +1,4 @@
-#Psychologists.services.
+# Psychologists.services.
 
 Welcome to the Psychologist Services project! This project is a web application
 that offers users to use the services of psychologists.
@@ -7,7 +7,7 @@ Open
 [Psychologists.services](https://marini23.github.io/psychologists-services/) to
 view the website.
 
-##Features
+## Features
 
 - **Browse Psychologists**: View a list of psychologists and their details.
 - **Filteringand Sorting**: Filter and sort psychologists based on various
@@ -15,7 +15,7 @@ view the website.
 - **Favorites**: Mark psychologists as favorites for quick access.
 - **Pagination**: Navigate through multiple pages of psychologist listings.
 
-##Technologies Used
+## Technologies Used
 
 - **React**: Frontend framework for building user interfaces.
 - **Redux Toolkit**: State management library for managing application state.
