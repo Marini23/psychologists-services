@@ -50,13 +50,15 @@ export const FilterPsychologists = () => {
             ...baseStyles,
             height: 48,
             borderRadius: 14,
-
             backgroundColor: theme.colors.primary,
             border: state.isSelected ? 'none' : 'none',
             borderColor: state.isFocused
               ? 'transparent'
               : baseStyles.borderColor,
             boxShadow: state.isFocused ? 'none' : baseStyles.boxShadow,
+            ':hover': {
+              backgroundColor: theme.colors.active,
+            },
           }),
           singleValue: provided => ({
             ...provided,
@@ -83,7 +85,6 @@ export const FilterPsychologists = () => {
             ...baseStyles,
             fontWeight: 500,
             padding: 0,
-            //   margin: ' 10px 0',
             marginBottom: 10,
             color: state.isSelected
               ? theme.colors.dropdownText

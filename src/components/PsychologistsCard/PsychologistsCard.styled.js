@@ -110,6 +110,7 @@ export const PriceText = styled.p`
 export const PriceSpan = styled.span`
   font-weight: 600;
   color: ${({ theme }) => theme.colors.price};
+  margin-left: 4px;
 `;
 
 export const Container = styled.div`
@@ -153,6 +154,10 @@ export const BtnReadMore = styled.button`
   width: 82px;
   font-weight: 500;
   line-height: 1.5;
+  &:hover {
+    color: ${props => `${props.theme.colors.active}`};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.active};
+  }
 `;
 
 export const BtnMakeAppointment = styled.button`
@@ -169,4 +174,19 @@ export const BtnMakeAppointment = styled.button`
   font-weight: 500;
   line-height: 1.2;
   margin-top: 24px;
+  &:hover {
+    background-color: ${props => `${props.theme.colors.active}`};
+  }
+`;
+
+export const NotAuthMessage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #d81f21;
 `;

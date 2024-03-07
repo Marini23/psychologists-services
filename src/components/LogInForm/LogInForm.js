@@ -32,8 +32,10 @@ export const LogInForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: values => {
-      dispatch(logIn(values));
-      isClose();
+      if (formik.isValid) {
+        dispatch(logIn(values));
+        isClose();
+      }
     },
   });
 
@@ -54,6 +56,7 @@ export const LogInForm = ({ isClose }) => {
           name="email"
           type="email"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.email}
           placeholder="Email"
           autoComplete="off"
@@ -67,6 +70,7 @@ export const LogInForm = ({ isClose }) => {
             name="password"
             type={showPassword ? 'text' : 'password'}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.password}
             placeholder="Password"
             autoComplete="off"

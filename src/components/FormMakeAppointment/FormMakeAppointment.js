@@ -33,8 +33,6 @@ const formSchema = Yup.object().shape({
 });
 
 export const FormMakeAppointment = ({ selectedPsychologist, isClose }) => {
-  //   const { avatar_url, name } = selectedPsychologist;
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -45,11 +43,11 @@ export const FormMakeAppointment = ({ selectedPsychologist, isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: values => {
-      // console.log(values);
-      alert('An appointment  is scheduled successfully');
-      // dispatch(logIn(values));
-      isClose();
-      formik.resetForm();
+      if (formik.isValid) {
+        alert('An appointment is scheduled successfully');
+        isClose();
+        formik.resetForm();
+      }
     },
   });
 
@@ -79,55 +77,59 @@ export const FormMakeAppointment = ({ selectedPsychologist, isClose }) => {
           name="name"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.name}
           placeholder="Name"
-          autoComplete="off"
-        />
-        <TelTimeContainer>
-          <Input
-            name="tel"
-            type="tel"
-            onChange={formik.handleChange}
-            value={formik.values.tel}
-            placeholder="+380"
-            autoComplete="off"
-          />
-          {/* <TimePicker /> */}
-          <InputTime
-            name="time"
-            type="time"
-            onChange={formik.handleChange}
-            value={formik.values.time}
-          />
-        </TelTimeContainer>
-        <Input
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          placeholder="Email"
-          autoComplete="off"
-        />
-        <InputComment
-          name="comment"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.comment}
-          placeholder="Comment"
           autoComplete="off"
         />
         {formik.touched.name && formik.errors.name ? (
           <ErrorMessage>{formik.errors.name}</ErrorMessage>
         ) : null}
+        <TelTimeContainer>
+          <Input
+            name="tel"
+            type="tel"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.tel}
+            placeholder="+380"
+            autoComplete="off"
+          />
+          <InputTime
+            name="time"
+            type="time"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.time}
+          />
+        </TelTimeContainer>
         {formik.touched.tel && formik.errors.tel ? (
           <ErrorMessage>{formik.errors.tel}</ErrorMessage>
         ) : null}
         {formik.touched.time && formik.errors.time ? (
           <ErrorMessage>{formik.errors.time}</ErrorMessage>
         ) : null}
+        <Input
+          name="email"
+          type="email"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+          placeholder="Email"
+          autoComplete="off"
+        />
         {formik.touched.email && formik.errors.email ? (
           <ErrorMessage>{formik.errors.email}</ErrorMessage>
         ) : null}
+        <InputComment
+          name="comment"
+          type="text"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.comment}
+          placeholder="Comment"
+          autoComplete="off"
+        />
         {formik.touched.comment && formik.errors.comment ? (
           <ErrorMessage>{formik.errors.comment}</ErrorMessage>
         ) : null}

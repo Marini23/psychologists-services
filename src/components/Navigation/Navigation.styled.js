@@ -33,7 +33,6 @@ export const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10%;
-  /* margin-left: auto; */
   margin-right: auto;
   @media screen and (max-width: 1120px) {
     display: none;
@@ -43,7 +42,6 @@ export const NavWrapper = styled.div`
 export const NavLinkStyledLogo = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
-  /* font-size: 1.25em; */
   font-size: clamp(16px, (16px + 20 * (100vw - 320px) / 320), 20px);
   font-weight: 600;
   line-height: 1.5;
@@ -62,6 +60,9 @@ export const SpanLogo = styled.span`
 
   &:visited {
     color: inherit;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.colors.active};
   }
 `;
 

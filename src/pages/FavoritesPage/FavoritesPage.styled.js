@@ -27,4 +27,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.backgroundMain};
   font-weight: 500;
   line-height: 1.2;
+  &:hover {
+    background-color: ${props => `${props.theme.colors.active}`};
+  }
 `;

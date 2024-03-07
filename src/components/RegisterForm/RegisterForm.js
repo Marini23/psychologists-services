@@ -40,8 +40,10 @@ export const RegisterForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: async values => {
-      dispatch(register(values));
-      isClose();
+      if (formik.isValid) {
+        dispatch(register(values));
+        isClose();
+      }
     },
   });
 
@@ -63,6 +65,7 @@ export const RegisterForm = ({ isClose }) => {
           name="name"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.name}
           placeholder="Name"
           autoComplete="off"
@@ -75,19 +78,21 @@ export const RegisterForm = ({ isClose }) => {
           name="email"
           type="email"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.email}
           placeholder="Email"
           autoComplete="off"
         />
-        {formik.touched.email && formik.errors.email ? (
+        {formik.touched.email && formik.errors.email && (
           <ErrorMessage>{formik.errors.email}</ErrorMessage>
-        ) : null}
+        )}
         <PasswordContainer>
           <Input
             id="password"
             name="password"
             type={showPassword ? 'text' : 'password'}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.password}
             placeholder="Password"
             autoComplete="off"

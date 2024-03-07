@@ -16,6 +16,7 @@ import {
   Item,
   Name,
   NameText,
+  NotAuthMessage,
   PriceRating,
   PriceSpan,
   PriceText,
@@ -57,6 +58,7 @@ export const PsychologistsCard = ({ psychologist }) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
+  const [modalIsOpenNotAuth, setModalIsOpenNotAuth] = useState(false);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -68,6 +70,13 @@ export const PsychologistsCard = ({ psychologist }) => {
 
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+  const openModalNotAuth = () => {
+    setModalIsOpenNotAuth(true);
+  };
+
+  const closeModalNotAuth = () => {
+    setModalIsOpenNotAuth(false);
   };
 
   const isOpenReadMore = () => {
@@ -84,9 +93,11 @@ export const PsychologistsCard = ({ psychologist }) => {
     if (isFavorite) {
       dispatch(deleteFavorites(psychologist));
     } else {
-      isLoggedIn
-        ? dispatch(addFavorites(psychologist))
-        : alert('This functionality is only available to authorized users.');
+      if (isLoggedIn) {
+        dispatch(addFavorites(psychologist));
+      } else {
+        openModalNotAuth();
+      }
     }
   };
 
@@ -146,7 +157,6 @@ export const PsychologistsCard = ({ psychologist }) => {
             Specialization: <FeaturesSpan>{specialization}</FeaturesSpan>
           </FeaturesText>
           <FeaturesText>
-            Initial_consultation:{' '}
             <FeaturesSpan>{initial_consultation}</FeaturesSpan>
           </FeaturesText>
         </Container>
@@ -166,6 +176,11 @@ export const PsychologistsCard = ({ psychologist }) => {
           isClose={closeModal}
           selectedPsychologist={selectedPsychologist}
         />
+      </ModalWindow>
+      <ModalWindow isClose={closeModalNotAuth} isOpen={modalIsOpenNotAuth}>
+        <NotAuthMessage>
+          This functionality is only available to authorized users.
+        </NotAuthMessage>
       </ModalWindow>
     </Item>
   );
