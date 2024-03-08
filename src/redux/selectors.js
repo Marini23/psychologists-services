@@ -6,6 +6,8 @@ export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 
+export const selectErrorAuth = state => state.auth.error;
+
 export const selectIsLoading = state => state.psychologists.isLoading;
 
 export const selectError = state => state.psychologists.error;
@@ -23,6 +25,14 @@ export const selectTheme = state => state.theme.selectedTheme;
 
 export const selectFavoritesPsychologists = state =>
   state.favorites.favoritesPsychologists;
+
+// export const selectFavoritesPsychologists = createSelector(
+//   [state => state.favorites.favoritesPsychologists],
+//   favoritesPsychologists => {
+//     const limit = 3; // Change this to the desired number of favorites to show
+//     return favoritesPsychologists.slice(0, limit);
+//   }
+// );
 
 export const selectFilteredPsychologists = createSelector(
   [selectPsychologistsItems, selectFilter],

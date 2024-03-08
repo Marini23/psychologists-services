@@ -31,9 +31,11 @@ export const register = createAsyncThunk(
 
       return serializedUser;
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error(`Error: ${errorCode}`, errorMessage);
+      const serializedError = {
+        code: error.code,
+        message: error.message,
+      };
+      return thunkAPI.rejectWithValue(serializedError);
     }
   }
 );
@@ -58,9 +60,12 @@ export const logIn = createAsyncThunk(
       };
       return serializedUser;
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error(`Error: ${errorCode}`, errorMessage);
+      console.log(error);
+      const serializedError = {
+        code: error.code,
+        message: error.message,
+      };
+      return thunkAPI.rejectWithValue(serializedError);
     }
   }
 );
@@ -68,11 +73,12 @@ export const logIn = createAsyncThunk(
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await signOut(auth);
-    // Sign-out successful
   } catch (error) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.error(`Error: ${errorCode}`, errorMessage);
+    const serializedError = {
+      code: error.code,
+      message: error.message,
+    };
+    return thunkAPI.rejectWithValue(serializedError);
   }
 });
 
@@ -94,7 +100,11 @@ export const fetchCurrentUser = createAsyncThunk(
           }
         });
       } catch (error) {
-        reject(error);
+        const serializedError = {
+          code: error.code,
+          message: error.message,
+        };
+        return thunkAPI.rejectWithValue(serializedError);
       }
     });
   }

@@ -11,13 +11,17 @@ const FavoritesSlice = createSlice({
       state.favoritesPsychologists.push(action.payload);
     },
     deleteFavorites(state, action) {
-      const index = state.favoritesIPsychologists.findIndex(
+      const index = state.favoritesPsychologists.findIndex(
         item => item.id === action.payload.id
       );
       state.favoritesPsychologists.splice(index, 1);
     },
+    clearFavorites(state, action) {
+      state.favoritesPsychologists = [];
+    },
   },
 });
 
-export const { addFavorites, deleteFavorites } = FavoritesSlice.actions;
+export const { addFavorites, deleteFavorites, clearFavorites } =
+  FavoritesSlice.actions;
 export const favoritesReducer = FavoritesSlice.reducer;

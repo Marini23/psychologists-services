@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectName } from '../../redux/selectors';
 import { logOut } from '../../redux/authSlice/authOperations';
+import toast from 'react-hot-toast';
 
 import avatar from './avatar_user.svg';
 import {
@@ -14,6 +15,13 @@ import {
 export const UserMenu = () => {
   const name = useSelector(selectName);
   const dispatch = useDispatch();
+  const handleLogout = async () => {
+    try {
+      await dispatch(logOut());
+    } catch (error) {
+      toast.error('Something went wrong. Try again later');
+    }
+  };
 
   return (
     <UserContainer>
@@ -23,7 +31,7 @@ export const UserMenu = () => {
         </AvatarIcon>
         <Name>{name}</Name>
       </UserInfo>
-      <Button type="button" onClick={() => dispatch(logOut())}>
+      <Button type="button" onClick={handleLogout}>
         Log Out
       </Button>
     </UserContainer>

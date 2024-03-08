@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 import {
   Button,
   ErrorMessage,
@@ -39,9 +40,19 @@ export const RegisterForm = ({ isClose }) => {
       password: '',
     },
     validationSchema: formSchema,
-    onSubmit: async values => {
+    onSubmit: values => {
       if (formik.isValid) {
-        dispatch(register(values));
+        dispatch(register(values))
+          .unwrap()
+          .catch(error => {
+            if (error.code === 'auth/email-already-in-use') {
+              toast.error(
+                'Email is already in use. Please use a different email.'
+              );
+            } else {
+              toast.error('Something went wrong. Try again later');
+            }
+          });
         isClose();
       }
     },

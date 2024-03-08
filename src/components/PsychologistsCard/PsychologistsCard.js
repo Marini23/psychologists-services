@@ -25,7 +25,7 @@ import {
   Star,
 } from './PsychologistsCard.styled';
 import { ReadMoreInfo } from './ReadMoreInfo';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ModalWindow } from 'components/Modal/Modal';
 import { FormMakeAppointment } from 'components/FormMakeAppointment/FormMakeAppointment';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,6 +35,7 @@ import {
 } from '../../redux/selectors';
 import {
   addFavorites,
+  clearFavorites,
   deleteFavorites,
 } from '../../redux/favoritesSlice/favoritesSlice';
 export const PsychologistsCard = ({ psychologist }) => {
@@ -59,6 +60,13 @@ export const PsychologistsCard = ({ psychologist }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
   const [modalIsOpenNotAuth, setModalIsOpenNotAuth] = useState(false);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      // Clear favorites upon logout
+      dispatch(clearFavorites());
+    }
+  }, [dispatch, isLoggedIn]);
 
   const openModal = () => {
     setModalIsOpen(true);

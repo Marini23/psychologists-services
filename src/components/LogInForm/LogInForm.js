@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 import {
   Button,
   ErrorMessage,
@@ -33,7 +34,17 @@ export const LogInForm = ({ isClose }) => {
     validationSchema: formSchema,
     onSubmit: values => {
       if (formik.isValid) {
-        dispatch(logIn(values));
+        dispatch(logIn(values))
+          .unwrap()
+          .catch(error => {
+            if (error.code === 'auth/invalid-credential') {
+              toast.error(
+                'Invalid credentials provided. Please double-check your email and password.'
+              );
+            } else {
+              toast.error('Something went wrong. Try again later');
+            }
+          });
         isClose();
       }
     },
