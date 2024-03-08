@@ -1,21 +1,19 @@
 import { FavoritesPsychologists } from 'components/FavoritesPsychologists/FavoritesPsychologists';
 import { Button, Container } from './FavoritesPage.styled';
 import { FilterPsychologists } from 'components/FilterPsychologists/FilterPsychologists';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   selectError,
   selectFavoritesPsychologists,
   selectFilter,
   selectIsLoading,
-  selectIsLoggedIn,
 } from '../../redux/selectors';
 import { Loader } from 'components/Loader';
 
 import { useState } from 'react';
-import { getFavorites } from '../../redux/favoritesSlice/favoritesSlice';
 
 export const FavoritesPage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const favoritesPsychologists = useSelector(selectFavoritesPsychologists);
   const filter = useSelector(selectFilter);
   const [visibleFavorites, setVisibleFavorites] = useState(
