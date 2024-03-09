@@ -4,6 +4,7 @@ export const EmptyFavoritesMessage = styled.p`
   display: flex;
   font-size: 3rem;
   justify-content: center;
+  height: 100vh;
 `;
 
 export const List = styled.ul`

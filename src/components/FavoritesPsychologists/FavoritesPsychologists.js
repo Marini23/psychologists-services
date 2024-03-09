@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { EmptyFavoritesMessage, List } from './FavoritesPsychologists.styled';
 import { PsychologistsCard } from 'components/PsychologistsCard/PsychologistsCard';
-import { selectFavoritesPsychologists } from '../../redux/selectors';
+import { selectFilteredFavorites } from '../../redux/selectors';
 
 export const FavoritesPsychologists = ({ visibleFavorites }) => {
-  const favoritesPsychologists = useSelector(selectFavoritesPsychologists);
+  const favoritesPsychologists = useSelector(selectFilteredFavorites);
   return (
     <>
       {favoritesPsychologists.length === 0 ? (

@@ -43,6 +43,9 @@
     opacity: 0.6;
     border-radius: 10px;
   }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   @media screen and (max-width: 768px) {
     min-width: 320px;
     padding: 1.75rem;

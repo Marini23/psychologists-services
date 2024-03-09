@@ -114,6 +114,7 @@ export const InputComment = styled.textarea`
 
 export const Button = styled.button`
   cursor: pointer;
+  display: flex;
   height: 52px;
   border-radius: 30px;
   border: none;

@@ -63,7 +63,6 @@ export const PsychologistsCard = ({ psychologist }) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      // Clear favorites upon logout
       dispatch(clearFavorites());
     }
   }, [dispatch, isLoggedIn]);
