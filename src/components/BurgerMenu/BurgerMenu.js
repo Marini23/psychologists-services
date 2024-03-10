@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   AvatarIcon,
   Button,
+  ButtonLogOut,
   List,
   Name,
   NavLinkStyled,
@@ -180,7 +181,9 @@ export const BurgerMenu = () => {
             </Button>
           )}
           {isLoggedIn && (
-            <Button onClick={() => dispatch(logOut())}>Log out</Button>
+            <ButtonLogOut onClick={() => dispatch(logOut())}>
+              Log out
+            </ButtonLogOut>
           )}
         </div>
       </Menu>

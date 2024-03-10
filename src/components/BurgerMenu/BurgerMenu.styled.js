@@ -28,6 +28,9 @@ export const NavLinkStyled = styled(NavLink)`
   &:visited {
     color: inherit;
   }
+  &:hover {
+    color: ${({ theme }) => theme.colors.active};
+  }
 `;
 
 export const AvatarIcon = styled.div`
@@ -57,7 +60,7 @@ export const List = styled.ul`
   flex-direction: column;
   align-items: start;
   gap: 0.875rem;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
 `;
 
 export const Button = styled.button`
@@ -65,4 +68,11 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   margin-bottom: 14px;
+`;
+
+export const ButtonLogOut = styled.button`
+  display: flex;
+  background-color: transparent;
+  border: none;
+  margin-top: 14px;
 `;
