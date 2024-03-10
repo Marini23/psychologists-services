@@ -23,8 +23,8 @@ const FavoritesSlice = createSlice({
     changePageFavorites(state) {
       state.currentPageFavorites += 1;
     },
-    clearPageFavorites(state, action) {
-      state.changePageFavorites = 1;
+    resetPageFavorites(state, action) {
+      state.currentPageFavorites = 1;
     },
   },
 });
@@ -34,6 +34,6 @@ export const {
   deleteFavorites,
   clearFavorites,
   changePageFavorites,
-  clearPageFavorites,
+  resetPageFavorites,
 } = FavoritesSlice.actions;
 export const favoritesReducer = FavoritesSlice.reducer;

@@ -26,7 +26,7 @@ export const Navigation = () => {
           <NavLinkStyled to="/">Home</NavLinkStyled>
           <NavLinkStyled to="/psychologists">Psychologists</NavLinkStyled>
           {isLoggedIn && (
-            <NavLinkStyled to="/Favorites">Favorites</NavLinkStyled>
+            <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
           )}
         </NavWrapper>
         {isLoggedIn ? <UserMenu /> : <AuthMenu />}

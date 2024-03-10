@@ -10,7 +10,11 @@ import {
 } from '../../redux/selectors';
 import { Loader } from 'components/Loader';
 
-import { changePageFavorites } from '../../redux/favoritesSlice/favoritesSlice';
+import {
+  changePageFavorites,
+  resetPageFavorites,
+} from '../../redux/favoritesSlice/favoritesSlice';
+import { useEffect } from 'react';
 
 export const FavoritesPage = () => {
   const dispatch = useDispatch();
@@ -20,11 +24,9 @@ export const FavoritesPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     dispatch(clearFavorites());
-  //   }
-  // }, [dispatch, isLoggedIn]);
+  useEffect(() => {
+    dispatch(resetPageFavorites());
+  }, [dispatch]);
 
   const handleClick = () => {
     dispatch(changePageFavorites());

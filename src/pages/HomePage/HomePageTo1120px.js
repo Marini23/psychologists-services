@@ -58,7 +58,9 @@ export const HomePageTo1120px = () => {
             psychologists.
           </Text>
           <Button>
-            <Link href="psychologists-services/psychologists">Get started</Link>
+            <Link href="/psychologists-services/psychologists">
+              Get started
+            </Link>
             <img src={arrow} alt="arrow" />
           </Button>
         </ContentContainer>
